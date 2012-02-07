@@ -1,4 +1,8 @@
 Quizzimoto::Application.routes.draw do
+  get "oauth2/authorize"
+
+  get "oauth2/callback"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
