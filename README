@@ -1,0 +1,7 @@
+Quizzimoto
+==========
+
+This application lets you build video-based quizzes. A teacher can choose a
+playlist of videos and a set of questions to ask students about those videos.
+My goal is to do something interesting in the educational space using Ruby on
+Rails and YouTube APIs.
