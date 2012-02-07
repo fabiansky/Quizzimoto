@@ -1,0 +1,13 @@
+defaults: &DEFAULTS
+  oauth2:
+    client_id: 923268490145.apps.googleusercontent.com
+    client_secret: eZqwg18A0wkdespB3Zztu_uU
+
+development:
+  <<: *DEFAULTS
+
+test:
+  <<: *DEFAULTS
+
+production:
+  <<: *DEFAULTS
