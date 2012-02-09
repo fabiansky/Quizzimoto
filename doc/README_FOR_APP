@@ -25,6 +25,20 @@ both of those things here (https://code.google.com/apis/console/).
 Once you have an OAuth2 client ID and client secret, update
 config/app_config.yml.
 
+=== SSL Root Certificates
+
+Ruby doesn't know where to look for root SSL certificates.  On OS X, you can
+install some root certificates using MacPorts:
+
+  sudo port install curl-ca-bundle
+
+If that doesn't work for you, or if you still see errors such as:
+
+  SSL_connect returned=1 errno=0 state=SSLv3 read server certificate B: certificate verify failed (OpenSSL::SSL::SSLError)
+
+then you may need to figure out where the root SSL certificates are for your
+operating system and tweak config/initializers/fix_ssl.rb.
+
 == Other Commands
 
 Starting the server:
