@@ -2,13 +2,7 @@
 #
 #   SSL_connect returned=1 errno=0 state=SSLv3 read server certificate B: certificate verify failed (OpenSSL::SSL::SSLError)
 #
-# See:
-# 
-#   * http://martinottenwaelter.fr/2010/12/ruby19-and-the-ssl-error/
-#   * http://jimneath.org/2011/10/19/ruby-ssl-certificate-verify-failed.html
-#   * http://code.google.com/p/google-plus-ruby-starter/issues/detail?id=3#c6
-#   * http://www.rubyinside.com/how-to-cure-nethttps-risky-default-https-behavior-4010.html
-#   * http://stackoverflow.com/questions/5074164/google-api-ruby-client-translate-api-examples
+# See: http://jjinux.blogspot.com/2012/02/ruby-working-around-ssl-errors-on-os-x.html
 
 require 'open-uri'
 require 'net/https'
