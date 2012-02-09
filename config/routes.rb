@@ -1,4 +1,6 @@
 Quizzimoto::Application.routes.draw do
+  get "welcome/index"
+
   match "oauth2authorize" => "oauth2#authorize", :as => :oauth2_authorize
   match "oauth2callback"  => "oauth2#callback",  :as => :oauth2_callback
 
