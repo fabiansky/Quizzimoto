@@ -29,5 +29,6 @@ gem 'httpadapter', :require => 'httpadapter/adapters/net_http'
 # put test-only gems in this group so their generators
 # and rake tasks are available in development mode:
 group :test, :development do
-  gem "rspec-rails", "~> 2.6"
+  gem 'rspec-rails', '~> 2.6'
+  gem 'capybara'
 end
