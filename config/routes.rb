@@ -1,7 +1,6 @@
 Quizzimoto::Application.routes.draw do
-  get "oauth2/authorize"
-
-  get "oauth2/callback"
+  match "oauth2authorize" => "oauth2#authorize", :as => :oauth2_authorize
+  match "oauth2callback"  => "oauth2#callback",  :as => :oauth2_callback
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
