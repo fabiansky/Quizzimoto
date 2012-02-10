@@ -7,28 +7,50 @@ Rails and YouTube? APIs.
 
 == Setup
 
-This application uses Ruby version 1.9 and Rails version 3.0.5.  Assuming you
-have a reasonable Ruby environment setup, you should be able to install all
-the necessary gems via:
+This application uses Ruby version 1.9.2 and Rails version 3.0.5.  If you
+already have those things installed, you can skip the next section.
 
-  sudo bundle install
+=== Setting up Ruby with rvm
 
-Then, setup your database:
+These instructions show how to setup Ruby 1.9.2 under rvm on OS X.  It
+shouldn't require that much tweaking to get them to run on other operating
+systems.  Note that I had a lot of issues getting ruby-debug19 to work under
+MacPorts which is why I switched to rvm.
 
-  rake db:migrate
+  sudo port install sqlite3
+ 
+Setup rvm:
 
-=== API Keys and OAuth2
+  # On Ubuntu, you'll need to install curl:
+  # sudo apt-get install curl
 
-You'll probably want to sign up for your own API key and setup OAuth2.  Do
-both of those things here (https://code.google.com/apis/console/).
+Note, rvm assumes you use bash.
 
-Once you have an OAuth2 client ID and client secret, update
-config/app_config.yml.
+  bash -s stable < <(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer)
+
+This creates ~/.rvm and updates ~/.bash_profile.
+
+Run the following in all your open terminals:
+
+  source ~/.bash_profile
+
+Do *not* use sudo when using "gem install" or "bundle install" under rvm.
+  
+  rvm install 1.9.2
+  rvm use 1.9.2            # To switch Ruby versions temporarily
+  which ruby irb gem rake  # Should all be in ~/.rvm
+  ruby -v                  # Should be 1.9.2
+  rvm --default 1.9.2      # To set your default version of Ruby
+
+Gems will be located in ~/.rvm/gems/ruby-1.9.2-p290/gems.
+    
+  gem install bundler
 
 === SSL Root Certificates
 
-Ruby doesn't know where to look for root SSL certificates.  On OS X, you can
-install some root certificates using MacPorts:
+Ruby doesn't know where to look for root SSL certificates.  Ubuntu comes with
+root certificates already installed.  On OS X, you can install some root
+certificates using MacPorts:
 
   sudo port install curl-ca-bundle
 
@@ -39,7 +61,22 @@ If that doesn't work for you, or if you still see errors such as:
 then you may need to figure out where the root SSL certificates are for your
 operating system and tweak config/initializers/fix_ssl.rb.
 
-== Other Commands
+=== Setting Up the Application
+
+Now you're ready to setup the application itself:
+
+  sudo bundle install
+  rake db:migrate
+
+=== API Keys and OAuth2
+
+You'll may want to sign up for your own API key and setup OAuth2.  Do both of
+those things here (https://code.google.com/apis/console/).
+
+Once you have an OAuth2 client ID and client secret, update
+config/app_config.yml.
+
+== Other Useful Commands
 
 Starting the server:
 
