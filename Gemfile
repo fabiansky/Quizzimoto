@@ -31,4 +31,5 @@ gem 'httpadapter', :require => 'httpadapter/adapters/net_http'
 group :test, :development do
   gem 'rspec-rails', '~> 2.6'
   gem 'capybara'
+  gem 'webmock'
 end
