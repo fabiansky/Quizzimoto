@@ -3,6 +3,7 @@ ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'rspec/autorun'
+require 'webmock/rspec'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
@@ -29,4 +30,24 @@ RSpec.configure do |config|
   # automatically. This will be the default behavior in future versions of
   # rspec-rails.
   config.infer_base_class_for_anonymous_controllers = false
+end
+
+# Do all the mocking and visiting necessary to simulate a login.
+def login
+  body = MultiJson.encode({
+    'access_token'  => '12345',
+    'refresh_token' => '54321',
+    'expires_in'    => '3600'
+  })
+  
+  stub_request(:post, 'https://accounts.google.com/o/oauth2/token').with(
+    :body => {
+      'grant_type'    => 'authorization_code',
+      'code'          => 'code',
+      'redirect_uri'  => oauth2_callback_url,
+      'client_id'     => APP_CONFIG['oauth2']['client_id'],
+      'client_secret' => APP_CONFIG['oauth2']['client_secret']
+    }).to_return(:body => body)
+
+  visit oauth2_callback_url(:code => 'code')
 end
