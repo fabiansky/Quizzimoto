@@ -24,6 +24,7 @@ gem 'sqlite3'
 # gem 'aws-s3', :require => 'aws/s3'
 gem 'google-api-client', :require => 'google/api_client'
 gem 'httpadapter', :require => 'httpadapter/adapters/net_http'
+gem 'countries'
 
 # Bundle gems for the local environment. Make sure to
 # put test-only gems in this group so their generators
