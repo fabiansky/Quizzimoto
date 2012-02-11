@@ -31,11 +31,15 @@ gem 'httpadapter', :require => 'httpadapter/adapters/net_http'
 group :test, :development do
   gem 'rspec-rails', '~> 2.6'
   gem 'capybara'
-  gem 'webmock'
 
   # I find these two to be helpful during development.  However, I had a hard
   # time getting ruby-debug19 running under MacPorts.  Feel free to comment out
   # these two lines.
   gem 'ruby-debug19', :require => 'ruby-debug'
   gem 'pry'
+end
+
+# webmock gets in the way of normal development.
+group :test do
+  gem 'webmock'
 end
