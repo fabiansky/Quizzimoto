@@ -21,8 +21,8 @@ MacPorts which is why I switched to rvm.
  
 Setup rvm:
 
-  # On Ubuntu, you'll need to install curl:
-  # sudo apt-get install curl
+  # On Ubuntu, you'll need a couple dependencies:
+  # sudo apt-get install curl libreadline5-dev
 
 Note, rvm assumes you use bash.
 
