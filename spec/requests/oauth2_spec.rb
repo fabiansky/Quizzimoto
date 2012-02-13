@@ -8,7 +8,7 @@ describe 'OAuth2' do
     page.should have_content('Login to continue')
   end
 
-  it 'lets you view the welcome page if you login' do
+  it 'lets you view the home page if you login' do
     login
     page.current_url.should == 'http://www.example.com/'
     page.should have_content('This application lets you build video-based quizzes')
