@@ -1,8 +1,6 @@
 Quizzimoto::Application.routes.draw do
   resources :quizzes
 
-  get "welcome/index"
-
   match "oauth2authorize" => "oauth2#authorize", :as => :oauth2_authorize
 
   match "oauth2callback"  => "oauth2#callback",  :as => :oauth2_callback
@@ -56,7 +54,7 @@ Quizzimoto::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => "welcome#index"
+  root :to => "quizzes#index"
 
   # See how all your routes lay out with "rake routes"
 
