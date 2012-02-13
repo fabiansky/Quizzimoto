@@ -56,6 +56,11 @@ GEM
     erubis (2.6.6)
       abstract (>= 1.0.0)
     extlib (0.9.15)
+    factory_girl (2.5.2)
+      activesupport (>= 2.3.9)
+    factory_girl_rails (1.6.0)
+      factory_girl (~> 2.5.0)
+      railties (>= 3.0.0)
     faraday (0.7.6)
       addressable (~> 2.2)
       multipart-post (~> 1.1)
@@ -166,6 +171,7 @@ PLATFORMS
 DEPENDENCIES
   capybara
   countries
+  factory_girl_rails (~> 1.2)
   google-api-client
   httpadapter
   pry

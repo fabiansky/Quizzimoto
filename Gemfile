@@ -38,6 +38,7 @@ group :test, :development do
   # these two lines.
   gem 'ruby-debug19', :require => 'ruby-debug'
   gem 'pry'
+  gem 'factory_girl_rails', '~> 1.2'
 end
 
 # webmock gets in the way of normal development.
