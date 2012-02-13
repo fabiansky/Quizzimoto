@@ -8,11 +8,17 @@ describe 'Welcome' do
     end
   end
 
-  it "shows a list of quizzes" do
+  it 'shows a list of quizzes' do
+    login
     Factory :quiz
     visit '/'
-    page.should have_content('Factoring Primes')
-    page.should have_content('13')
+    page.should have_content('Scrabble for Nihilists')
+    page.should have_content('47')
     page.should have_content('United States')
+  end
+
+  it 'says something when there are no quizzes' do
+    login
+    page.should have_content('There are no quizzes yet')
   end
 end
