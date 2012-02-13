@@ -1,29 +1,27 @@
-<h1>Listing quizzes</h1>
+<%= render 'quizzes/welcome' %>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Playlist</th>
-    <th>Min age years</th>
-    <th>Country alpha2</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<h3>Available Quizzes</h3>
 
-<% @quizzes.each do |quiz| %>
-  <tr>
-    <td><%= quiz.name %></td>
-    <td><%= quiz.playlist_id %></td>
-    <td><%= quiz.min_age_years %></td>
-    <td><%= quiz.country_alpha2 %></td>
-    <td><%= link_to 'Show', quiz %></td>
-    <td><%= link_to 'Edit', edit_quiz_path(quiz) %></td>
-    <td><%= link_to 'Destroy', quiz, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+<% if @quizzes.blank? %>
+  <p>There are no quizzes yet.  Be the first to create one!</p>
+<% else %>
+  <table>
+    <tr>
+      <td>Name</td>
+      <td>Suggested Age</td>
+      <td>Country</td>
+    </tr>
+
+    <% for quiz in @quizzes %>
+      <tr>
+        <td><%= link_to quiz.name, quiz %></td>
+        <td><%= quiz.min_age_years %>+</td>
+        <td><%= Country[quiz.country_alpha2].name %></td>
+      </tr>      
+    <% end %>
+  </table>
 <% end %>
-</table>
 
-<br />
-
-<%= link_to 'New Quiz', new_quiz_path %>
+<p>
+  <%= link_to 'Create a new quiz', new_quiz_path %>
+</p>
