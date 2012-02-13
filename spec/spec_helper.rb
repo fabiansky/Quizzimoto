@@ -32,7 +32,8 @@ RSpec.configure do |config|
   config.infer_base_class_for_anonymous_controllers = false
 end
 
-# Do all the mocking and visiting necessary to simulate a login.
+# Do all the mocking and visiting necessary to simulate a login using
+# Capybara.
 def login
   body = MultiJson.encode({
     'access_token'  => '12345',
@@ -50,4 +51,14 @@ def login
     }).to_return(:body => body)
 
   visit oauth2_callback_url(:code => 'code')
+end
+
+# Execute the following to simulate a validly logged in session:
+#
+#   session[:token] = valid_login_token
+def valid_login_token
+  { 'access_token'  => '12345',
+    'refresh_token' => '54321',
+    'expires_in'    => '3600',
+    'issued_at'     => Time.now }
 end
