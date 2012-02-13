@@ -13,10 +13,10 @@
 ActiveRecord::Schema.define(:version => 20120213173730) do
 
   create_table "quizzes", :force => true do |t|
-    t.string   "name"
-    t.string   "playlist_id"
-    t.integer  "min_age_years"
-    t.string   "country_alpha2"
+    t.string   "name",                          :null => false
+    t.string   "playlist_id",                   :null => false
+    t.integer  "min_age_years",  :default => 0, :null => false
+    t.string   "country_alpha2",                :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
