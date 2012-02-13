@@ -10,6 +10,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 20120213173730) do
+
+  create_table "quizzes", :force => true do |t|
+    t.string   "name"
+    t.string   "playlist_id"
+    t.integer  "min_age_years"
+    t.string   "country_alpha2"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
