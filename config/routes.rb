@@ -1,4 +1,6 @@
 Quizzimoto::Application.routes.draw do
+  resources :quizzes
+
   get "welcome/index"
 
   match "oauth2authorize" => "oauth2#authorize", :as => :oauth2_authorize

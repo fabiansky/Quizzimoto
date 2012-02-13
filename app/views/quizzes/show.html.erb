@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @quiz.name %>
+</p>
+
+<p>
+  <b>Playlist:</b>
+  <%= @quiz.playlist_id %>
+</p>
+
+<p>
+  <b>Min age years:</b>
+  <%= @quiz.min_age_years %>
+</p>
+
+<p>
+  <b>Country alpha2:</b>
+  <%= @quiz.country_alpha2 %>
+</p>
+
+
+<%= link_to 'Edit', edit_quiz_path(@quiz) %> |
+<%= link_to 'Back', quizzes_path %>
