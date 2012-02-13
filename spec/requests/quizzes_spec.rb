@@ -21,4 +21,11 @@ describe "Quizzes" do
     login
     page.should have_content('There are no quizzes yet')
   end
+
+  it 'allows you to create a new quiz' do
+    login
+    visit '/'
+    click_link 'Create a new quiz'
+    page.should have_content('New quiz')
+  end
 end
