@@ -24,14 +24,17 @@ describe QuizzesController do
   # Quiz. As you add validations to Quiz, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    {}
+    { :name           => 'Scrabble for Nihilists',
+      :playlist_id    => 'playlist_id',
+      :min_age_years  => '47',
+      :country_alpha2 => 'US' }
   end
   
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
   # QuizzesController. Be sure to keep this updated too.
   def valid_session
-    {}
+    { :token => valid_login_token }
   end
 
   describe "GET index" do
