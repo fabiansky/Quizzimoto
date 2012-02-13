@@ -2,9 +2,9 @@
 
 FactoryGirl.define do
   factory :quiz do
-    name "MyString"
-    playlist_id "MyString"
-    min_age_years 1
-    country_alpha2 "MyString"
+    name 'Scrabble for Nihilists'
+    playlist_id 'playlist_id'
+    min_age_years '47'
+    country_alpha2 'US'
   end
 end
