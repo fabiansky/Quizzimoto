@@ -9,7 +9,6 @@ class ApplicationController < ActionController::Base
     def setup_oauth2
       @client = Google::APIClient.new(
         :authorization => :oauth_2,
-        :host          => 'www.googleapis.com',
         :http_adapter  => HTTPAdapter::NetHTTPAdapter.new
       )
 
