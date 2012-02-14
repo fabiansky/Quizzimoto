@@ -35,7 +35,6 @@ describe "Quizzes" do
     login
     visit new_quiz_path
     click_button 'Create Quiz'
-
     ["Name", "Playlist", "Country alpha2"].each do |field|
       page.should have_content("#{field} can't be blank")
     end
