@@ -28,4 +28,16 @@ describe "Quizzes" do
     click_link 'Create a new quiz'
     page.should have_content('New quiz')
   end
+
+  # Advanced validation is tested in models/quiz_spec.rb.
+
+  it 'does validation' do
+    login
+    visit new_quiz_path
+    click_button 'Create Quiz'
+
+    ["Name", "Playlist", "Country alpha2"].each do |field|
+      page.should have_content("#{field} can't be blank")
+    end
+  end
 end
