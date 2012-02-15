@@ -1,5 +1,7 @@
 class Oauth2Controller < ApplicationController
   def authorize
+    @authorization_uri = @client.authorization.authorization_uri(
+      :approval_prompt => 'auto')
   end
 
   def callback
