@@ -3,6 +3,7 @@ require 'spec_helper'
 describe 'This project' do
   it 'uses RSpec instead of TestUnit' do
     Dir.exist?(File.join(File.dirname(__FILE__), '..', 'test')).should be_false
+    Dir.exist?(File.join(File.dirname(__FILE__), '..', 'spec')).should be_true
   end
 
   it 'prefers request specs with Capybara over view specs' do
