@@ -65,7 +65,7 @@ operating system and tweak config/initializers/fix_ssl.rb.
 
 Now you're ready to setup the application itself:
 
-  subundle install
+  bundle install
   rake db:migrate
 
 === API Keys and OAuth2
