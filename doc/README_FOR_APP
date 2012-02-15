@@ -65,7 +65,7 @@ operating system and tweak config/initializers/fix_ssl.rb.
 
 Now you're ready to setup the application itself:
 
-  sudo bundle install
+  subundle install
   rake db:migrate
 
 === API Keys and OAuth2
@@ -89,3 +89,13 @@ Running tests:
 Generating API documentation:
 
   rake doc:app
+
+== Other Useful Documentation
+
+=== OpenID and OAuth2
+
+These links are pretty helpful:
+
+ * https://oauthssodemo.appspot.com/
+ * http://code.google.com/apis/youtube/2.0/developers_guide_protocol_oauth2.html
+ * http://code.google.com/p/oauth-signet/source/browse/lib/signet/oauth_2/client.rb
