@@ -15,7 +15,8 @@ already have those things installed, you can skip the next section.
 These instructions show how to setup Ruby 1.9.2 under rvm on OS X.  It
 shouldn't require that much tweaking to get them to run on other operating
 systems.  Note that I had a lot of issues getting ruby-debug19 to work under
-MacPorts which is why I switched to rvm.
+MacPorts which is why I switched to rvm.  It also turns out that some HTTPS
+client (i.e. SSL) issues I had went away as soon as I switched to rvm.
 
   sudo port install sqlite3
  
@@ -45,21 +46,6 @@ Do *not* use sudo when using "gem install" or "bundle install" under rvm.
 Gems will be located in ~/.rvm/gems/ruby-1.9.2-p290/gems.
     
   gem install bundler
-
-=== SSL Root Certificates
-
-Ruby doesn't know where to look for root SSL certificates.  Ubuntu comes with
-root certificates already installed.  On OS X, you can install some root
-certificates using MacPorts:
-
-  sudo port install curl-ca-bundle
-
-If that doesn't work for you, or if you still see errors such as:
-
-  SSL_connect returned=1 errno=0 state=SSLv3 read server certificate B: certificate verify failed (OpenSSL::SSL::SSLError)
-
-then you may need to figure out where the root SSL certificates are for your
-operating system and tweak config/initializers/fix_ssl.rb.
 
 === Setting Up the Application
 
