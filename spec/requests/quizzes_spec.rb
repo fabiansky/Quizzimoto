@@ -9,8 +9,8 @@ describe "Quizzes" do
   end
 
   it 'shows a list of quizzes' do
-    login
     Factory :quiz
+    login
     visit '/'
     page.should have_content('Scrabble for Nihilists')
     page.should have_content('47')
@@ -38,5 +38,16 @@ describe "Quizzes" do
     ["Name", "Playlist", "Country alpha2"].each do |field|
       page.should have_content("#{field} can't be blank")
     end
+  end
+
+  it 'lets you edit a quiz' do
+    Factory :quiz
+    login
+    visit '/'
+    click_link 'Scrabble for Nihilists'
+    click_link 'Edit'
+    fill_in 'Name', :with => 'Scrabble for bad spelers'
+    click_button 'Update Quiz'
+    page.should have_content('Scrabble for bad spelers')
   end
 end
