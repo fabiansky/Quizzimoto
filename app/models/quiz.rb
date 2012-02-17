@@ -5,4 +5,5 @@ class Quiz < ActiveRecord::Base
     :numericality => { :greater_than_or_equal_to => 0 }
   validates :country_alpha2,
     :inclusion => Country.all.map(&:last)
+  attr_accessible :name, :playlist_id, :min_age_years, :country_alpha2
 end
