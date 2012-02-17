@@ -25,6 +25,7 @@ describe QuizzesController do
   # update the return value of this method accordingly.
   def valid_attributes
     { :name           => 'Scrabble for Nihilists',
+      :owner_id       => 'owner_id',
       :playlist_id    => 'playlist_id',
       :min_age_years  => '47',
       :country_alpha2 => 'US' }
