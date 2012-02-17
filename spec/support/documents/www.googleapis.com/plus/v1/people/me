@@ -1,0 +1,45 @@
+{
+ "kind": "plus#person",
+ "etag": "\"rRfsvTRgEvHLgkzTy4DjAw62J44/ZI8EuWRjjSrxqc2XAkxSJj3ZV08\"",
+ "id": "115478738847874567952",
+ "displayName": "Shannon Behrens",
+ "name": {
+  "familyName": "Behrens",
+  "givenName": "Shannon"
+ },
+ "tagline": "In this life we cannot do great things. We can only do small things with great love. -- Mother Teresa",
+ "gender": "male",
+ "aboutMe": "Catholic, father of six, open source enthusiast, Python and Ruby programmer.\u003cbr\u003e\u003cbr\u003eHere&#39;s my blog: \u003ca href=\"http://jjinux.blogspot.com/\"\u003eJJinuxLand\u003c/a\u003e",
+ "url": "https://plus.google.com/115478738847874567952",
+ "image": {
+  "url": "https://lh3.googleusercontent.com/-abePnTvm7gA/AAAAAAAAAAI/AAAAAAAAAAA/lrGQeFxJ8os/photo.jpg?sz=50"
+ },
+ "urls": [
+  {
+   "value": "http://jjinux.blogspot.com"
+  },
+  {
+   "value": "http://github.com/jjinux"
+  },
+  {
+   "value": "https://plus.google.com/115478738847874567952",
+   "type": "profile"
+  },
+  {
+   "value": "https://www.googleapis.com/plus/v1/people/115478738847874567952",
+   "type": "json"
+  }
+ ],
+ "organizations": [
+  {
+   "name": "St. Mary's College of California",
+   "title": "Math and Computer Science",
+   "type": "school"
+  },
+  {
+   "name": "YouTube",
+   "title": "Developer Advocate",
+   "type": "work"
+  }
+ ]
+}
