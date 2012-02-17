@@ -31,34 +31,3 @@ RSpec.configure do |config|
   # rspec-rails.
   config.infer_base_class_for_anonymous_controllers = false
 end
-
-# Do all the mocking and visiting necessary to simulate a login using
-# Capybara.
-def login
-  body = MultiJson.encode({
-    'access_token'  => '12345',
-    'refresh_token' => '54321',
-    'expires_in'    => '3600'
-  })
-  
-  stub_request(:post, 'https://accounts.google.com/o/oauth2/token').with(
-    :body => {
-      'grant_type'    => 'authorization_code',
-      'code'          => 'code',
-      'redirect_uri'  => oauth2_callback_url,
-      'client_id'     => APP_CONFIG['oauth2']['client_id'],
-      'client_secret' => APP_CONFIG['oauth2']['client_secret']
-    }).to_return(:body => body)
-
-  visit oauth2_callback_url(:code => 'code')
-end
-
-# Execute the following to simulate a validly logged in session:
-#
-#   session[:token] = valid_login_token
-def valid_login_token
-  { 'access_token'  => '12345',
-    'refresh_token' => '54321',
-    'expires_in'    => '3600',
-    'issued_at'     => Time.now }
-end
