@@ -28,4 +28,9 @@ describe Quiz do
       quiz.valid?.should == expected
     end
   end
+
+  it 'has an owner_id' do
+    quiz = Factory :quiz
+    quiz.owner_id.should_not be_nil
+  end
 end
