@@ -3,8 +3,7 @@ defaults: &DEFAULTS
     client_id: 923268490145.apps.googleusercontent.com
     client_secret: eZqwg18A0wkdespB3Zztu_uU
     scopes:
-      - https://www.googleapis.com/auth/userinfo.email
-      - https://www.googleapis.com/auth/userinfo.profile
+      - https://www.googleapis.com/auth/plus.me
       - http://gdata.youtube.com 
 
 development:
