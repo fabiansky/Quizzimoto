@@ -41,6 +41,7 @@ class QuizzesController < ApplicationController
   # POST /quizzes.xml
   def create
     @quiz = Quiz.new(params[:quiz])
+    @quiz.owner_id = current_user_id
 
     respond_to do |format|
       if @quiz.save
