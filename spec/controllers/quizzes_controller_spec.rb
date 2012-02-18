@@ -20,17 +20,6 @@ require 'spec_helper'
 
 describe QuizzesController do
 
-  # This should return the minimal set of attributes required to create a valid
-  # Quiz. As you add validations to Quiz, be sure to
-  # update the return value of this method accordingly.
-  def valid_attributes
-    { :name           => 'Scrabble for Nihilists',
-      :owner_id       => 'owner_id',
-      :playlist_id    => 'playlist_id',
-      :min_age_years  => '47',
-      :country_alpha2 => 'US' }
-  end
-  
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
   # QuizzesController. Be sure to keep this updated too.
@@ -40,7 +29,7 @@ describe QuizzesController do
 
   describe "GET index" do
     it "assigns all quizzes as @quizzes" do
-      quiz = Quiz.create! valid_attributes
+      quiz = Factory :quiz
       get :index, {}, valid_session
       assigns(:quizzes).should eq([quiz])
     end
@@ -48,7 +37,7 @@ describe QuizzesController do
 
   describe "GET show" do
     it "assigns the requested quiz as @quiz" do
-      quiz = Quiz.create! valid_attributes
+      quiz = Factory :quiz
       get :show, {:id => quiz.to_param}, valid_session
       assigns(:quiz).should eq(quiz)
     end
@@ -63,29 +52,39 @@ describe QuizzesController do
 
   describe "GET edit" do
     it "assigns the requested quiz as @quiz" do
-      quiz = Quiz.create! valid_attributes
+      quiz = Factory :quiz
       get :edit, {:id => quiz.to_param}, valid_session
       assigns(:quiz).should eq(quiz)
     end
   end
 
   describe "POST create" do
+    before(:each) do
+      stub_out_plus_discovery_document
+      stub_out_current_user_profile
+    end
+
     describe "with valid params" do
       it "creates a new Quiz" do
         expect {
-          post :create, {:quiz => valid_attributes}, valid_session
+          post :create, {:quiz => FactoryGirl.attributes_for(:quiz)}, valid_session
         }.to change(Quiz, :count).by(1)
       end
 
       it "assigns a newly created quiz as @quiz" do
-        post :create, {:quiz => valid_attributes}, valid_session
+        post :create, {:quiz => FactoryGirl.attributes_for(:quiz)}, valid_session
         assigns(:quiz).should be_a(Quiz)
         assigns(:quiz).should be_persisted
       end
 
       it "redirects to the created quiz" do
-        post :create, {:quiz => valid_attributes}, valid_session
+        post :create, {:quiz => FactoryGirl.attributes_for(:quiz)}, valid_session
         response.should redirect_to(Quiz.last)
+      end
+
+      it "uses the user's Google+ profile ID as the owner" do
+        post :create, {:quiz => FactoryGirl.attributes_for(:quiz)}, valid_session
+        Quiz.last.owner_id.should == '115478738847874567952'
       end
     end
 
@@ -109,7 +108,7 @@ describe QuizzesController do
   describe "PUT update" do
     describe "with valid params" do
       it "updates the requested quiz" do
-        quiz = Quiz.create! valid_attributes
+        quiz = Factory :quiz
         # Assuming there are no other quizzes in the database, this
         # specifies that the Quiz created on the previous line
         # receives the :update_attributes message with whatever params are
@@ -119,21 +118,21 @@ describe QuizzesController do
       end
 
       it "assigns the requested quiz as @quiz" do
-        quiz = Quiz.create! valid_attributes
-        put :update, {:id => quiz.to_param, :quiz => valid_attributes}, valid_session
+        quiz = Factory :quiz
+        put :update, {:id => quiz.to_param, :quiz => FactoryGirl.attributes_for(:quiz)}, valid_session
         assigns(:quiz).should eq(quiz)
       end
 
       it "redirects to the quiz" do
-        quiz = Quiz.create! valid_attributes
-        put :update, {:id => quiz.to_param, :quiz => valid_attributes}, valid_session
+        quiz = Factory :quiz
+        put :update, {:id => quiz.to_param, :quiz => FactoryGirl.attributes_for(:quiz)}, valid_session
         response.should redirect_to(quiz)
       end
     end
 
     describe "with invalid params" do
       it "assigns the quiz as @quiz" do
-        quiz = Quiz.create! valid_attributes
+        quiz = Factory :quiz
         # Trigger the behavior that occurs when invalid params are submitted
         Quiz.any_instance.stub(:save).and_return(false)
         put :update, {:id => quiz.to_param, :quiz => {}}, valid_session
@@ -141,7 +140,7 @@ describe QuizzesController do
       end
 
       it "re-renders the 'edit' template" do
-        quiz = Quiz.create! valid_attributes
+        quiz = Factory :quiz
         # Trigger the behavior that occurs when invalid params are submitted
         Quiz.any_instance.stub(:save).and_return(false)
         put :update, {:id => quiz.to_param, :quiz => {}}, valid_session
@@ -152,14 +151,14 @@ describe QuizzesController do
 
   describe "DELETE destroy" do
     it "destroys the requested quiz" do
-      quiz = Quiz.create! valid_attributes
+      quiz = Factory :quiz
       expect {
         delete :destroy, {:id => quiz.to_param}, valid_session
       }.to change(Quiz, :count).by(-1)
     end
 
     it "redirects to the quizzes list" do
-      quiz = Quiz.create! valid_attributes
+      quiz = Factory :quiz
       delete :destroy, {:id => quiz.to_param}, valid_session
       response.should redirect_to(quizzes_url)
     end
