@@ -33,4 +33,10 @@ describe Quiz do
     quiz = Factory :quiz
     quiz.owner_id.should_not be_nil
   end
+
+  it 'should not allow mass assignment to owner_id' do
+    quiz = Factory :quiz
+    quiz.update_attributes!(:owner_id => 'new owner_id')
+    quiz.owner_id.should == 'owner_id'
+  end
 end
