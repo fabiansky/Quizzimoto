@@ -9,8 +9,7 @@ describe Oauth2Controller do
       params['access_type'].first.should == 'offline'
       params['approval_prompt'].first.should == 'auto'
       params['scope'].first.split.should == %w(
-        https://www.googleapis.com/auth/userinfo.email
-        https://www.googleapis.com/auth/userinfo.profile
+        https://www.googleapis.com/auth/plus.me
         http://gdata.youtube.com  
       )
     end
