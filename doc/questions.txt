@@ -1,0 +1,129 @@
+Open Questions
+==============
+
+Can I use JavaScript to interact with the Google Docs form?
+
+	Maybe.  The form is embedded in an iframe served from a separate domain.
+	That makes it tricky.  I could load the request entirely on the server,
+	but that seems like an ugly hack.  I could instead just proxy the request
+	through my server.  I don't want to monkey with the iframe too much
+	because that seems like bad practice. However, adding a callback to the
+	submit button might be acceptable.
+
+When the user submits the form, how will I know?
+
+	We can use Apps Script with Ui Services to call back into the Rails
+	application which can somehow use Comet to update the page.  That sounds
+	painful.  Perhaps we can proxy the request to load the form through the
+	Rails server so that we are on the same domain.  Then, we can inject some
+	JavaScript that captures the form submission.
+
+Closed Questions
+================
+
+Should I use Cucumber?
+
+	I really like Cucumber, but that project seems to move extremely quickly.
+	It's hard for me to keep up since this is a 20% project. I'm going to keep
+	it simple and stick to RSpec and Capybara for right now.
+
+What should I do about auth?  Should I use Identity Toolkit?
+
+	Ryan Boyd said that I don't need Identity Toolkit.  He said I can just stick with OAuth2.  See:
+	
+		http://oauthssodemo.appspot.com/
+		http://code.google.com/apis/youtube/2.0/developers_guide_protocol_oauth2.html
+
+Should I have a users table?
+
+	I don't need one yet.
+
+Should I store OAuth2 tokens somewhere more permanent?
+
+	This question presupposes an identity system, i.e. that a user would log
+	into my site, and then I would have access to his saved OAuth2 token.  I
+	don't have that.  I changed it so that as soon as you click login, if you
+	have already approved OAuth2 access and you are already logged into
+	Google, you'll be logged in my site immediately.
+
+What should I do about admins?
+
+	I can probably do something simple like store a list of email addresses in
+	app_config.yml and then check the user's email address when he logs in.
+	However, I've decided to punt the problem entirely for the time being.
+
+Who can edit a quiz?
+
+	I'm not going to bother with realtime, collaborative editing.  Only an
+	owner can edit his own quiz.  Each quiz has an owner_id which corresponds
+	to the user's Google+ ID.
+
+Should I allow the user to logout?
+
+	Yes.  Reset his session and redirect him to the home page.
+
+Should I allow users to use as much of the app as possible without logging in?
+
+	It's the right thing to do.  For instance, it'd be nice to take quizzes
+	without logging in.  However, it adds a lot of complexity.  It's out of
+	scope for the time being.
+
+Do I need the scopes listed on (http://oauthssodemo.appspot.com/step/1)?  Do I
+need access to the user's email address?
+
+	"https://www.googleapis.com/auth/plus.me" gives me access to the user's
+	Google+ profile, which is more than I need for the time being.
+
+Should a quiz contain a playlist or just a single video?
+
+	I started the project thinking I would use a playlist, but it's much
+	simpler to just use a single video.
+
+How can a user pick the video for his quiz?
+
+	The goal is to do something useful with the GData API. Let's show him a
+	list of his existing videos. Let's also let him search for videos. Last of
+	all, we can provide him a link to
+	(http://www.youtube.com/my_videos_upload) so that he can upload a new
+	video or record a new video using his webcam.  Since this is done in a
+	separate tab, we'll need a refresh button next to the list of the user's
+	own videos.
+
+Can a user delete a quiz?  Do we give the user the ability to delete the
+corresponding video and any related spreadsheets?
+
+	Let users delete quizzes.  Don't worry about deleting the video or any
+	related spreadsheets.
+
+Should I use a Google Docs form for my quiz?
+
+	Yes.  Google Docs already has a form creator that has all the types of
+	questions that I'm interested in.  You can even embed the form in an
+	iframe.  This is a good opportunity to use multiple Google APIs together.
+
+What is it like to create a Google Docs form?  Is this something that a
+teacher creating a quiz can do?  Will it be too jarring to ask them to work
+with multiple websites at the same time?
+
+	The Google Docs form creator is actually pretty nice.  I think it's doable.
+
+Can I create a form automatically and send the user there directly so that he
+can edit it?
+
+	Yes.  You can use the Documents List API to create a new form
+	(http://code.google.com/apis/documents/).
+
+Can I embed the form in a window that slides out at certain times?
+
+	This is surely possible with jQuery UI, but I think it might not be worth
+	the effort.
+
+Is there any way to show the user questions one at a time?
+
+	It's probably possible, but hacking that deeply into the Google Docs form
+	seems hacky.  I think it may not be worth the effort.
+
+Can I get any metadata about the form, such as the number of questions?
+
+	It's probably possible to use the spreadsheets API to to do a range
+	request.
