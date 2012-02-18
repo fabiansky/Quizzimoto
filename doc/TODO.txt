@@ -1,0 +1,22 @@
+TODO
+====
+
+Should I add owner_id to _form, show, edit, and index?
+Show the user some profile information about himself.
+Let the user logout.
+Update the code.google.com entry, README, etc. to change playlist to video.
+Fix this warning:
+  http://stackoverflow.com/questions/3622394/ruby-1-9-2-strange-warning-when-running-cucumber-specs
+  We're using rack-1.2.5.
+  This fix should not impact Rack 1.3 and higher.
+Use a YouTube dev key:
+  Put it in app_config.rb.
+  Pass it through the Signet API calls.
+  Update api_samples.rb.
+  Document it in README_FOR_APP.
+Give the user a link to upload or record videos.
+Give the user a list of his own videos.
+Let the user search for videos.
+Let the user select a video for the quiz.
+Let users delete quizzes on the edit page:
+  Tell them that it won't delete the associated spreadsheets or video.
