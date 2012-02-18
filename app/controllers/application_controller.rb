@@ -27,4 +27,21 @@ class ApplicationController < ActionController::Base
         redirect_to oauth2_authorize_url
       end
     end
+
+    # Return the current user's Google+ profile.
+    #
+    # Cache it in the session to avoid running into quota issues.
+    def current_user_profile
+      unless session[:current_user_profile]
+        plus = @client.discovered_api('plus')
+        response = @client.execute(plus.people.get, :userId => 'me')
+        session[:current_user_profile] = JSON.parse(response.body)
+      end
+      session[:current_user_profile]
+    end
+
+    # Return the current user's Google+ ID.
+    def current_user_id
+      current_user_profile['id']
+    end
 end
