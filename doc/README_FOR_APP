@@ -57,9 +57,8 @@ Now you're ready to setup the application itself:
 === API Keys and OAuth2
 
 You'll may want to sign up for your own API key and setup OAuth2.  Do both of
-those things here (https://code.google.com/apis/console/).
-
-Once you have an OAuth2 client ID and client secret, update
+those things here (https://code.google.com/apis/console/).  Remember to enable
+the Google+ API.  Once you have an OAuth2 client ID and client secret, update
 config/app_config.yml.
 
 == Other Useful Commands
