@@ -1,23 +1,6 @@
 Open Questions
 ==============
 
-Can I use JavaScript to interact with the Google Docs form?
-
-  Maybe.  The form is embedded in an iframe served from a separate domain.
-  That makes it tricky.  I could load the request entirely on the server,
-  but that seems like an ugly hack.  I could instead just proxy the request
-  through my server.  I don't want to monkey with the iframe too much
-  because that seems like bad practice. However, adding a callback to the
-  submit button might be acceptable.
-
-When the user submits the form, how will I know?
-
-  We can use Apps Script with Ui Services to call back into the Rails
-  application which can somehow use Comet to update the page.  That sounds
-  painful.  Perhaps we can proxy the request to load the form through the
-  Rails server so that we are on the same domain.  Then, we can inject some
-  JavaScript that captures the form submission.
-
 Closed Questions
 ================
 
@@ -107,11 +90,25 @@ with multiple websites at the same time?
 
   The Google Docs form creator is actually pretty nice.  I think it's doable.
 
-Can I create a form automatically and send the user there directly so that he
-can edit it?
+Can I embed the form in an iframe.
 
-  Yes.  You can use the Documents List API to create a new form
-  (http://code.google.com/apis/documents/).
+  Yes.  The UI has that ability.  I assume I can do it with the API by tweaking
+  some URLs.
+
+Can I create a spreadsheet automatically and get the URL?
+
+  Yes.  You can use the Documents List API (http://code.google.com/apis/documents/) to create a new spreadsheet.  This will give you the URL.
+
+Can I do the same thing for a form?
+
+  Create a spreadsheet.  Then, you can transform the spreadsheet URL to generate
+  the URL for the form.  Transform the URL from:
+
+    https://docs.google.com/spreadsheet/ccc?key=0AvZ56A18VRlxdExqSW96eWZSMC1DZ3hqelZTWEEyOHc#gid=0
+    
+  To:
+
+    https://docs.google.com/spreadsheet/gform?key=0AvZ56A18VRlxdExqSW96eWZSMC1DZ3hqelZTWEEyOHc&hl=en_US#edit
 
 Can I embed the form in a window that slides out at certain times?
 
@@ -127,3 +124,40 @@ Can I get any metadata about the form, such as the number of questions?
 
   It's probably possible to use the spreadsheets API to to do a range
   request.
+
+Can I use the first form response as the answer key?
+
+  Use the spreadsheets API to get the second row of the spreadsheet.  Tell
+  teacher to be the first one to respond to the quiz.
+
+Can I use JavaScript to interact with the Google Docs form?  When the user
+submits the form, how will I know?
+
+  The form is embedded in an iframe served from a separate domain. That makes
+  it impossible to inject JavaScript.  There are two main approaches.  I'm
+  strongly leaning toward the second.
+
+  The first approach is to use Apps Script with Ui Services to call back into
+  the Rails application.  Then, the server could use Comet somehow to push the
+  change back into the user's page.  This is hard because I don't currently have
+  a way to do Comet.  It's also fairly complex.  Here are a few links for the
+  various Ui Services things needed for this approach:
+
+    http://code.google.com/googleapps/appsscript/articles/appengine.html
+    http://code.google.com/googleapps/appsscript/class_urlfetchapp.html
+    http://code.google.com/googleapps/appsscript/class_serversubmithandler.html
+
+  The second approach is to proxy the request to load the form through the
+  Rails server.  That way it'll come from the same domain, which allows me to
+  inject some JavaScript into the page, specifically a submit handler.  Aside
+  from fixing the timing issues, it also allows me to tweak the form a bit
+  before it gets submitted.  However, I don't want to monkey with the form
+  too much since that would set a bad example.
+
+The outer page knows who the user is thanks to OAuth2.  How do I inject that
+into the form response?
+
+  When you load the form, you can pass parameters to fill in a few of the
+  blanks.  I might need to tell the teacher to add a field for the user's name,
+  email address, and/or ID.  The forms themselves don't have this feature,
+  presumably because of privacy concerns.
