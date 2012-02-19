@@ -152,7 +152,9 @@ submits the form, how will I know?
   inject some JavaScript into the page, specifically a submit handler.  Aside
   from fixing the timing issues, it also allows me to tweak the form a bit
   before it gets submitted.  However, I don't want to monkey with the form
-  too much since that would set a bad example.
+  too much since that would set a bad example.  Furthermore, this may be
+  against the terms of service.  I should talk to the spreadsheets team about
+  it.
 
 The outer page knows who the user is thanks to OAuth2.  How do I inject that
 into the form response?
