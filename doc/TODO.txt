@@ -1,10 +1,11 @@
 TODO
 ====
 
+Use the country_select.
+Flash is being duplicated on the edit page.
 Use a YouTube dev key:
   Pass it through the Signet API calls.
   Document it in README_FOR_APP.
-When a quiz is first created it won't have a video_id.
 Give the user a link to upload or record videos.
 Let the user search for videos.
 Give the user a list of his own videos.
