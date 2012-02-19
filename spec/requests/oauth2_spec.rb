@@ -25,4 +25,14 @@ describe 'OAuth2' do
       lambda { visit '/oauth2callback' }.should raise_exception(ArgumentError)
     end
   end
+
+  it 'allows you to logout' do
+    login
+    page.should have_content('Shannon Behrens')
+    click_link 'Logout'
+    page.current_url.should == 'http://www.example.com/oauth2authorize'
+    page.should have_content('You are now logged out.')
+    page.should have_content('Login to continue')
+    page.should_not have_content('Shannon Behrens')
+  end
 end

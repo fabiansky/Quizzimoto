@@ -10,7 +10,7 @@ describe 'Layout' do
     it 'Show stuff specific to the current user' do
       login
       page.should have_content('Shannon Behrens')
-      page.should have_css('img.profile_pic')
+      page.should have_css('#profile_pic img')
     end
   end
 end

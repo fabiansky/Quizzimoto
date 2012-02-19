@@ -2,8 +2,8 @@ Quizzimoto::Application.routes.draw do
   resources :quizzes
 
   match "oauth2authorize" => "oauth2#authorize", :as => :oauth2_authorize
-
   match "oauth2callback"  => "oauth2#callback",  :as => :oauth2_callback
+  match "logout"          => "oauth2#logout",    :as => :logout
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

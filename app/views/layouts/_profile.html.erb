@@ -1,7 +1,11 @@
 <% if logged_in? %>
   <div id=profile>
-    <%= image_tag(current_user_profile['image']['url'],
-                  :alt => 'Profile picture', :class => 'profile_pic') %>
-    <%= current_user_profile['displayName'] %>
+    <div id=profile_pic>
+      <%= image_tag current_user_profile['image']['url'],
+                    :alt => 'Profile picture' %>
+    </div>
+
+    <%= current_user_profile['displayName'] %><br>
+    <%= link_to 'Logout', logout_path, :rel => 'nofollow' %>
   </div>
 <% end %>

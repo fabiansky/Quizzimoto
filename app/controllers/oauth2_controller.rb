@@ -17,4 +17,10 @@ class Oauth2Controller < ApplicationController
 
     redirect_to root_url
   end
+
+  def logout
+    reset_session
+    flash[:notice] = 'You are now logged out.'
+    redirect_to oauth2_authorize_url
+  end
 end
