@@ -1,10 +1,6 @@
-<p>
-  <b>Name:</b>
-  <%= @quiz.name %>
-</p>
+<h3><%= @quiz.name %></h3>
 
 <p>
-  <b>Video:</b>
   <% if @quiz.video_id %>
     <iframe width=560 height=315
       src="http://www.youtube.com/embed/<%= @quiz.video_id %>"
@@ -17,9 +13,7 @@
 <p>
   <b>Age:</b>
   <%= @quiz.min_age_years %>+
-</p>
 
-<p>
   <b>Country:</b>
   <%= Country[@quiz.country_alpha2].name %>
 </p>
