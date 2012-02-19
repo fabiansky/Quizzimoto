@@ -27,11 +27,36 @@ describe QuizzesController do
     { :token => valid_login_token }
   end
 
+  before(:each) do
+    stub_plus_discovery_document
+    stub_current_user_profile
+  end
+
   describe "GET index" do
     it "assigns all quizzes as @quizzes" do
       quiz = Factory :quiz
       get :index, {}, valid_session
       assigns(:quizzes).should eq([quiz])
+    end
+
+    it "handles expired access tokens" do
+      stub_request(:get, 'https://www.googleapis.com/plus/v1/people/me').
+        with(:headers => {'Authorization' => 'Bearer 12345'}).
+        to_return(:status => 401, :body => JSON.dump(
+          {"error" =>
+            {"errors" =>
+              [{"domain"       => "global",
+                "reason"       => "authError",
+                "message"      => "Invalid Credentials",
+                "locationType" => "header",
+                "location"     => "Authorization"}],
+             "code"    => 401,
+             "message" => "Invalid Credentials"}}))
+
+      get :index, {}, valid_session
+      session[:token].should be_nil
+      session[:flash][:notice].should =~ /Your session has expired/
+      response.should redirect_to(oauth2_authorize_url)
     end
   end
 
@@ -59,11 +84,6 @@ describe QuizzesController do
   end
 
   describe "POST create" do
-    before(:each) do
-      stub_out_plus_discovery_document
-      stub_out_current_user_profile
-    end
-
     describe "with valid params" do
       it "creates a new Quiz" do
         expect {
