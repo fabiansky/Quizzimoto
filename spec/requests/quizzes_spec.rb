@@ -1,6 +1,11 @@
 require 'spec_helper'
 
 describe "Quizzes" do
+  before(:each) do
+    stub_plus_discovery_document
+    stub_current_user_profile
+  end
+
   %w(/ /quizzes).each do |path|
     it 'should redirect you to login' do
       visit path
@@ -11,7 +16,6 @@ describe "Quizzes" do
   it 'shows a list of quizzes' do
     Factory :quiz
     login
-    visit '/'
     page.should have_content('Scrabble for Nihilists')
     page.should have_content('47')
     page.should have_content('United States')
@@ -24,7 +28,6 @@ describe "Quizzes" do
 
   it 'allows you to create a new quiz' do
     login
-    visit '/'
     click_link 'Create a new quiz'
     page.should have_content('New quiz')
   end
@@ -33,8 +36,8 @@ describe "Quizzes" do
 
   it 'does validation' do
     login
-    stub_out_plus_discovery_document
-    stub_out_current_user_profile
+    stub_plus_discovery_document
+    stub_current_user_profile
     visit new_quiz_path
     click_button 'Create Quiz'
     ['Name', 'Playlist', 'Country alpha2'].each do |field|
@@ -45,7 +48,6 @@ describe "Quizzes" do
   it 'lets you edit a quiz' do
     Factory :quiz
     login
-    visit '/'
     click_link 'Scrabble for Nihilists'
     click_link 'Edit'
     fill_in 'Name', :with => 'Scrabble for bad spelers'
