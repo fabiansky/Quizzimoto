@@ -2,6 +2,10 @@ img {
   border: 0;
 }
 
+h1 a {
+  text-decoration: none;
+}
+
 p.flash_notice {
   font-weight: bold;
 }
