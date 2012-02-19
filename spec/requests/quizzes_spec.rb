@@ -49,14 +49,11 @@ describe "Quizzes" do
   end
 
   describe 'show' do
-    it 'lets you edit a quiz' do
+    it 'has an edit link' do
       Factory :quiz
       login
       click_link 'Scrabble for Nihilists'
       click_link 'Edit'
-      fill_in 'Name', :with => 'Scrabble for bad spelers'
-      click_button 'Update Quiz'
-      page.should have_content('Scrabble for bad spelers')
     end
 
     it 'shows an embedded player' do
