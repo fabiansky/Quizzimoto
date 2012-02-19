@@ -7,8 +7,9 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
-
-<%= yield %>
-
+  <h1>Quizzimoto</h1>
+  <%= render '/layouts/profile' %>
+  <%= render '/layouts/flash_messages' %>
+  <%= yield %>
 </body>
 </html>
