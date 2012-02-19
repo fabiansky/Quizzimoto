@@ -38,13 +38,18 @@ describe "Quizzes" do
     # Advanced validation is tested in models/quiz_spec.rb.
     it 'does validation' do
       login
-      stub_plus_discovery_document
-      stub_current_user_profile
       visit new_quiz_path
       click_button 'Create Quiz'
-      ['Name', 'Country alpha2'].each do |field|
-        page.should have_content("#{field} can't be blank")
-      end
+      page.should have_content("Name can't be blank")
+    end
+
+    it 'has a country_select' do
+      quiz = Factory :quiz
+      login
+      visit edit_quiz_url(quiz)
+      select 'Portugal', :from => 'Country'
+      click_button 'Update'
+      page.should have_content('Portugal')
     end
   end
 
