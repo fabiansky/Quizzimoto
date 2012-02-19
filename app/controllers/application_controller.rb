@@ -23,8 +23,8 @@ class ApplicationController < ActionController::Base
       @client.authorization.code          = params[:code] if params[:code]
 
       # Load the access token here if it's available.
-      if session[:token]
-        @client.authorization.update_token!(session[:token])
+      if session[:oauth2_token]
+        @client.authorization.update_token!(session[:oauth2_token])
       end
 
       unless @client.authorization.access_token || request.path_info =~ /^\/oauth2/
@@ -34,7 +34,7 @@ class ApplicationController < ActionController::Base
 
     # Is the current user logged in?
     def logged_in?
-      session[:token] != nil
+      session[:oauth2_token] != nil
     end
 
     # Return the current user's Google+ profile.
@@ -70,7 +70,7 @@ class ApplicationController < ActionController::Base
     #   response = @client.execute(plus.people.get, :userId => 'me')
     #   raise AuthorizationError if response.status == 401
     def handle_authorization_error
-      session[:token] = nil
+      session[:oauth2_token] = nil
       flash[:notice] = %q{
         Your session has expired.  Please log in again to continue.
       }

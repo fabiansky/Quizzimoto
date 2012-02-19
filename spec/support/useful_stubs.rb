@@ -21,7 +21,7 @@ end
 
 # Execute the following to simulate a validly logged in session:
 #
-#   session[:token] = valid_login_token
+#   session[:oauth2_token] = valid_login_token
 def valid_login_token
   {'access_token'  => '12345',
    'refresh_token' => '54321',

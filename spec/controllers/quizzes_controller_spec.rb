@@ -24,7 +24,7 @@ describe QuizzesController do
   # in order to pass any filters (e.g. authentication) defined in
   # QuizzesController. Be sure to keep this updated too.
   def valid_session
-    { :token => valid_login_token }
+    { :oauth2_token => valid_login_token }
   end
 
   before(:each) do
