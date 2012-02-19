@@ -30,4 +30,8 @@ RSpec.configure do |config|
   # automatically. This will be the default behavior in future versions of
   # rspec-rails.
   config.infer_base_class_for_anonymous_controllers = false
+
+  # I don't like testing controllers and views separately since it's too easy
+  # to misspell variable names.
+  config.render_views
 end
