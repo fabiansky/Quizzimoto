@@ -53,11 +53,15 @@ Now you're ready to setup the application itself:
   bundle install
   rake db:migrate
 
-=== API Keys and OAuth2
+=== API Keys
 
-You'll may want to sign up for your own API key and setup OAuth2.  Do both of
+You may want to sign up for your own API key and setup OAuth2.  Do both of
 those things here (https://code.google.com/apis/console/).  Remember to enable
 the Google+ API.  Once you have an OAuth2 client ID and client secret, update
+config/app_config.yml.
+
+You may also want to sign up for your own YouTube developer key.  Do that here
+(http://code.google.com/apis/youtube/dashboard/gwt/index.html) and update
 config/app_config.yml.
 
 == Other Useful Commands
