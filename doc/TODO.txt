@@ -1,10 +1,11 @@
 TODO
 ====
 
-Flash is being duplicated on the edit page.
 Use a YouTube dev key:
   Pass it through the Signet API calls.
   Document it in README_FOR_APP.
+Don't let the user edit someone else's video:
+  Don't even show them the edit link.
 Give the user a link to upload or record videos.
 Let the user search for videos.
 Give the user a list of his own videos.
