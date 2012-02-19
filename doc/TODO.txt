@@ -3,7 +3,6 @@ TODO
 
 Use a YouTube dev key:
   Pass it through the Signet API calls.
-  Update api_samples.rb.
   Document it in README_FOR_APP.
 When a quiz is first created it won't have a video_id.
 Give the user a link to upload or record videos.
