@@ -26,6 +26,9 @@ class QuizzesController < ApplicationController
   def new
     @quiz = Quiz.new
 
+    # Set a default.
+    @quiz.country_alpha2 = 'US'
+
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @quiz }

@@ -73,6 +73,11 @@ describe QuizzesController do
       get :new, {}, valid_session
       assigns(:quiz).should be_a_new(Quiz)
     end
+
+    it "uses the US as the default country" do
+      get :new, {}, valid_session
+      assigns(:quiz).country_alpha2.should == 'US'
+    end
   end
 
   describe "GET edit" do
