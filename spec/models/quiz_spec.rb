@@ -44,4 +44,11 @@ describe Quiz do
     quiz.update_attributes!(:owner_id => 'new owner_id')
     quiz.owner_id.should == 'owner_id'
   end
+
+  it 'allows video_id to be NULL' do
+    quiz = Factory :quiz
+    quiz.video_id = nil
+    quiz.should be_valid
+    quiz.save.should be_true
+  end
 end

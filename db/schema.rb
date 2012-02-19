@@ -10,11 +10,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120219015949) do
+ActiveRecord::Schema.define(:version => 20120219034913) do
 
   create_table "quizzes", :force => true do |t|
     t.string   "name",                          :null => false
-    t.string   "video_id",                      :null => false
+    t.string   "video_id"
     t.integer  "min_age_years",  :default => 0, :null => false
     t.string   "country_alpha2",                :null => false
     t.datetime "created_at"
