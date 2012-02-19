@@ -1,6 +1,10 @@
 class ApplicationController < ActionController::Base
+  class AuthorizationError < RuntimeError; end
+
   before_filter :setup_oauth2
   protect_from_forgery
+  helper_method :logged_in?, :current_user_profile, :current_user_id
+  rescue_from AuthorizationError, :with => :handle_authorization_error
 
   protected
 
@@ -28,6 +32,11 @@ class ApplicationController < ActionController::Base
       end
     end
 
+    # Is the current user logged in?
+    def logged_in?
+      session[:token] != nil
+    end
+
     # Return the current user's Google+ profile.
     #
     # Cache it in the session to avoid running into quota issues.
@@ -35,6 +44,7 @@ class ApplicationController < ActionController::Base
       unless session[:current_user_profile]
         plus = @client.discovered_api('plus')
         response = @client.execute(plus.people.get, :userId => 'me')
+        raise AuthorizationError if response.status == 401
         session[:current_user_profile] = JSON.parse(response.body)
       end
       session[:current_user_profile]
@@ -43,5 +53,27 @@ class ApplicationController < ActionController::Base
     # Return the current user's Google+ ID.
     def current_user_id
       current_user_profile['id']
+    end
+
+    # Handle 401s.
+    #
+    # If a web service call results in a 401, it probably means the user's
+    # OAuth2 access token has expired.  Clear his session[:token] and ask him
+    # to log in again.
+    #
+    # HACK: This code could be a lot smarter.  It could try to refresh the
+    # access token.  I'm going to punt on that until this issue is resolved:
+    # http://code.google.com/p/google-api-ruby-client/issues/detail?id=12&q=401
+    #
+    # Here's an example of using this method:
+    #
+    #   response = @client.execute(plus.people.get, :userId => 'me')
+    #   raise AuthorizationError if response.status == 401
+    def handle_authorization_error
+      session[:token] = nil
+      flash[:notice] = %q{
+        Your session has expired.  Please log in again to continue.
+      }
+      redirect_to oauth2_authorize_url
     end
 end
