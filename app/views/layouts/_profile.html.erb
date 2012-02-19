@@ -2,6 +2,6 @@
   <div id=profile>
     <%= image_tag(current_user_profile['image']['url'],
                   :alt => 'Profile picture', :class => 'profile_pic') %>
-    Welcome, <%= current_user_profile['displayName'] %>
+    <%= current_user_profile['displayName'] %>
   </div>
 <% end %>
