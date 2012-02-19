@@ -23,21 +23,21 @@ end
 #
 #   session[:token] = valid_login_token
 def valid_login_token
-  { 'access_token'  => '12345',
-    'refresh_token' => '54321',
-    'expires_in'    => '3600',
-    'issued_at'     => Time.now }
+  {'access_token'  => '12345',
+   'refresh_token' => '54321',
+   'expires_in'    => '3600',
+   'issued_at'     => Time.now}
 end
 
 # Stub out: https://www.googleapis.com/discovery/v1/apis/plus/v1/rest
-def stub_out_plus_discovery_document
+def stub_plus_discovery_document
   filename = Rails.root.join(
     'spec/support/documents/www.googleapis.com/discovery/v1/apis/plus/v1/rest')
   stub_request(:get, 'https://www.googleapis.com/discovery/v1/apis/plus/v1/rest').
     to_return(:body => IO.read(filename))
 end
 
-def stub_out_current_user_profile
+def stub_current_user_profile
   filename = Rails.root.join(
     'spec/support/documents/www.googleapis.com/plus/v1/people/me')
   stub_request(:get, 'https://www.googleapis.com/plus/v1/people/me').
