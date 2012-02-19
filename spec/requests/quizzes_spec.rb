@@ -40,7 +40,7 @@ describe "Quizzes" do
     stub_current_user_profile
     visit new_quiz_path
     click_button 'Create Quiz'
-    ['Name', 'Playlist', 'Country alpha2'].each do |field|
+    ['Name', 'Video', 'Country alpha2'].each do |field|
       page.should have_content("#{field} can't be blank")
     end
   end
