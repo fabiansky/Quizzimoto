@@ -1,7 +1,6 @@
 TODO
 ====
 
-Should I add owner_id to _form, show, edit, and index?
 Show the user some profile information about himself.
 Let the user logout.
 Update the code.google.com entry, README, etc. to change playlist to video.
