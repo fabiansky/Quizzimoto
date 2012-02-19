@@ -1,8 +1,6 @@
 TODO
 ====
 
-Use humanized attributes:
-  http://firstruby.wordpress.com/2011/01/21/humanized_attributes-in-rails-3/s
 Flash is being duplicated on the edit page.
 Use a YouTube dev key:
   Pass it through the Signet API calls.
