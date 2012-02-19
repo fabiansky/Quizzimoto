@@ -5,6 +5,8 @@ defaults: &DEFAULTS
     scopes:
       - https://www.googleapis.com/auth/plus.me
       - http://gdata.youtube.com 
+  youtube:
+    dev_key: AI39si7sYNfF3-xVbZUalnyU-0CjvnwucP0u4edZ_uCm02GaM8RajpeTBJ3LWprdw_THhdvDNwjy2UPO4dCH3a0LG8B25cQnkQ
 
 development:
   <<: *DEFAULTS
