@@ -1,8 +1,6 @@
 TODO
 ====
 
-Show the user some profile information about himself.
-Let the user logout.
 Update the code.google.com entry, README, etc. to change playlist to video.
 Fix this warning:
   http://stackoverflow.com/questions/3622394/ruby-1-9-2-strange-warning-when-running-cucumber-specs
