@@ -27,10 +27,20 @@ describe "Quizzes" do
       page.should have_content('There are no quizzes yet')
     end
 
-    it 'allows you to create a new quiz' do
+    it 'has a link to create a new quiz' do
       login
       click_link 'Create a new quiz'
-      page.should have_content('New quiz')
+    end
+  end
+
+  describe 'new' do
+    it 'uses a human friendly field names' do
+      login
+      click_link 'Create a new quiz'
+      page.should have_content('Country')
+      page.should_not have_content('Country alpha2')
+      page.should have_content('Minimum age in years')
+      page.should_not have_content('Min age years')
     end
   end
 
