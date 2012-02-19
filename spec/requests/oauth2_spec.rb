@@ -1,6 +1,11 @@
 require 'spec_helper'
 
 describe 'OAuth2' do
+  before(:each) do
+    stub_plus_discovery_document
+    stub_current_user_profile
+  end
+  
   it 'forces you to login' do
     visit '/'
     page.current_url.should == 'http://www.example.com/oauth2authorize'
