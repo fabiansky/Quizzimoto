@@ -7,7 +7,13 @@
 
 <p>
   <b>Video:</b>
-  <%= @quiz.video_id %>
+  <% if @quiz.video_id %>
+    <iframe width=560 height=315
+      src="http://www.youtube.com/embed/<%= @quiz.video_id %>"
+      frameborder=0 allowfullscreen class=player></iframe>
+  <% else %>
+    This is no video associated with this quiz yet.
+  <% end %>
 </p>
 
 <p>
