@@ -23,7 +23,7 @@ class QuizzesController < ApplicationController
     @quiz.owner_id = current_user_id
 
     if @quiz.save
-      redirect_to(@quiz, :notice => 'Quiz was successfully created.')
+      redirect_to(edit_quiz_url(@quiz), :notice => 'Quiz was successfully created.')
     else
       render :action => "new"
     end

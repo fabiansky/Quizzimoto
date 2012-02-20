@@ -42,6 +42,26 @@ describe "Quizzes" do
       page.should have_content('Minimum age')
       page.should_not have_content('Min age years')
     end
+
+    it 'is a simple page that leads to a more complicated edit page' do
+      login
+      click_link 'Create a new quiz'
+
+      # I should see a Name field but not a Video or Form field.
+      find '#quiz_name'
+      lambda { find '#quiz_video_id' }.should raise_error(Capybara::ElementNotFound)
+      lambda { find '#quiz_form_id'  }.should raise_error(Capybara::ElementNotFound)
+
+      fill_in 'Name', :with => 'JJ'
+      fill_in 'Minimum age', :with => 36
+      click_button 'Create Quiz'
+      
+      page.should have_content('Quiz was successfully created.')
+      page.should have_content('Editing quiz')
+      find '#quiz_name'
+      find '#quiz_video_id'
+      find '#quiz_form_id'
+    end
   end
 
   describe 'edit' do

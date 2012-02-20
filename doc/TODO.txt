@@ -1,8 +1,6 @@
 TODO
 ====
 
-Pull out unnecessary fields in the new quiz form.
-After creating a new quiz, edit the quiz.
 The edit quiz page should have sections.
 The form_id section should have some instructions.
 Use a YouTube dev key:

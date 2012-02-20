@@ -102,9 +102,9 @@ describe QuizzesController do
         assigns(:quiz).should be_persisted
       end
 
-      it "redirects to the created quiz" do
+      it "redirects to the edit form for the newly created quiz" do
         post :create, {:quiz => FactoryGirl.attributes_for(:quiz)}, valid_session
-        response.should redirect_to(Quiz.last)
+        response.should redirect_to(edit_quiz_url(Quiz.last))
       end
 
       it "uses the user's Google+ profile ID as the owner" do

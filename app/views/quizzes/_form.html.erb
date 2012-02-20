@@ -14,30 +14,10 @@
     </div>
   <% end %>
 
-  <div class=field>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
-  
-  <div class=field>
-    <%= f.label :video_id %>
-    <%= f.text_field :video_id %>
-  </div>
-  
-  <div class=field>
-    <%= f.label :form_id %>
-    <%= f.text_field :form_id %>
-  </div>
-  
-  <div class=field>
-    <%= f.label :min_age_years %>
-    <%= f.text_field :min_age_years %> (years)
-  </div>
-  
-  <div class=field>
-    <%= f.label :country_alpha2 %>
-    <%= f.country_select :country_alpha2 %>
-  </div>
+  <%= render :partial => 'basic_fields', :locals => { :f => f } %>
+  <% unless @quiz.new_record? %>
+    <%= render :partial => 'complex_fields', :locals => { :f => f } %>
+  <% end %>
   
   <div class=actions>
     <%= f.submit %>
