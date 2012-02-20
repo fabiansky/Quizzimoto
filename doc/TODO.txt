@@ -12,3 +12,4 @@ Give the user a list of his own videos.
 Let the user select a video for the quiz.
 Let users delete quizzes on the edit page:
   Tell them that it won't delete the associated spreadsheets or video.
+The show page shows the form name, not the quiz name.

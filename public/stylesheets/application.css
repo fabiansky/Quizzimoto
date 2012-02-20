@@ -19,3 +19,7 @@ p.flash_notice {
   float: left;
   padding: 4px;
 }
+
+iframe.form {
+  float: left;
+}

@@ -61,6 +61,16 @@ describe "Quizzes" do
       click_button 'Update'
       page.should have_content('Portugal')
     end
+
+    it 'has a field to edit the form_id' do
+      quiz = Factory :quiz
+      login
+      visit edit_quiz_url(quiz)
+      fill_in 'Form', :with => 'new_form_id'
+      click_button 'Update'
+      quiz.reload
+      quiz.form_id.should == 'new_form_id'
+    end
   end
 
   describe 'show' do
@@ -78,11 +88,25 @@ describe "Quizzes" do
       page.should have_css('iframe.player')
     end
 
+    it 'shows an embedded form' do
+      Factory :quiz
+      login
+      click_link 'Scrabble for Nihilists'
+      page.should have_css('iframe.form')      
+    end
+
     it 'tells you if there is no video' do
       Factory :quiz, :video_id => nil
       login
       click_link 'Scrabble for Nihilists'
       page.should have_content('This is no video associated with this quiz yet.')
+    end
+
+    it 'tells if you if there is no form' do
+      Factory :quiz, :form_id => nil
+      login
+      click_link 'Scrabble for Nihilists'
+      page.should have_content('This is no form associated with this quiz yet.')
     end
   end
 end

@@ -1,14 +1,19 @@
-<h3><%= @quiz.name %></h3>
+<% if @quiz.form_id.blank? %>
+  <h3><%= @quiz.name %></h3>
+  
+  <p>This is no form associated with this quiz yet.</p>
+<% else %>
+  <iframe width=760 height=968 frameborder=0 marginheight=0 marginwidth=0 class=form
+    src="https://docs.google.com/spreadsheet/embeddedform?formkey=<%= @quiz.form_id %>">Loading...</iframe>
+<% end %>
 
-<p>
-  <% if @quiz.video_id %>
-    <iframe width=560 height=315
-      src="http://www.youtube.com/embed/<%= @quiz.video_id %>"
-      frameborder=0 allowfullscreen class=player></iframe>
-  <% else %>
-    This is no video associated with this quiz yet.
-  <% end %>
-</p>
+<% if @quiz.video_id.blank? %>
+  <p>This is no video associated with this quiz yet.</p>
+<% else %>
+  <iframe width=560 height=315
+    src="http://www.youtube.com/embed/<%= @quiz.video_id %>"
+    frameborder=0 allowfullscreen class=player></iframe>
+<% end %>
 
 <p>
   <b>Age:</b>
@@ -17,7 +22,6 @@
   <b>Country:</b>
   <%= Country[@quiz.country_alpha2].name %>
 </p>
-
 
 <%= link_to 'Edit', edit_quiz_path(@quiz) %> |
 <%= link_to 'Back', quizzes_path %>
