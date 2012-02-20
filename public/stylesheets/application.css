@@ -35,10 +35,6 @@ div.field label {
   padding-right: 4px;
 }
 
-div.actions {
-  padding-left: 104px;
-}
-
 div.field_with_errors {
   display: inline;
   padding: 0px;
@@ -47,4 +43,16 @@ div.field_with_errors {
 
 div.field_with_errors label {
   color: red;
+}
+
+fieldset {
+  margin-bottom: 1em;
+}
+
+div.indented_submit {
+  padding-left: 104px;
+}
+
+div.spacious_submit {
+  margin-bottom: 1em;
 }

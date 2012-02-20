@@ -1,3 +1,8 @@
+<%
+  # This form is a bit tricky.  It's very simple for new quizzes, and fairly
+  # complex for existing quizzes.
+%>
+
 <%= form_for(@quiz) do |f| %>
   <% if @quiz.errors.any? %>
     <div id=error_explanation>
@@ -14,12 +19,52 @@
     </div>
   <% end %>
 
-  <%= render :partial => 'basic_fields', :locals => { :f => f } %>
+  <fieldset>
+    <legend>Basic Settings</legend>
+
+    <div class=field>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+
+    <div class=field>
+      <%= f.label :min_age_years %>
+      <%= f.text_field :min_age_years %> (years)
+    </div>
+
+    <div class=field>
+      <%= f.label :country_alpha2 %>
+      <%= f.country_select :country_alpha2 %>
+    </div>
+    
+    <% if @quiz.new_record? %>
+      <div class="indented_submit spacious_submit">
+        <%= f.submit %>
+      </div>
+    <% end %>
+  </fieldset>
+
   <% unless @quiz.new_record? %>
-    <%= render :partial => 'complex_fields', :locals => { :f => f } %>
+    <fieldset>
+      <legend>Video</legend>
+
+      <div class=field>
+        <%= f.label :video_id %>
+        <%= f.text_field :video_id %>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Form</legend>
+
+      <div class=field>
+        <%= f.label :form_id %>
+        <%= f.text_field :form_id %>
+      </div>
+    </fieldset>
+
+    <div class=spacious_submit>
+      <%= f.submit %>
+    </div>
   <% end %>
-  
-  <div class=actions>
-    <%= f.submit %>
-  </div>
 <% end %>
