@@ -1,6 +1,6 @@
 class Quiz < ActiveRecord::Base
   HUMANIZED_ATTRIBUTES = {
-    :min_age_years  => 'Minimum age in years',
+    :min_age_years  => 'Minimum age',
     :country_alpha2 => 'Country'
   }
 

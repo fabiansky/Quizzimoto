@@ -39,7 +39,7 @@ describe "Quizzes" do
       click_link 'Create a new quiz'
       page.should have_content('Country')
       page.should_not have_content('Country alpha2')
-      page.should have_content('Minimum age in years')
+      page.should have_content('Minimum age')
       page.should_not have_content('Min age years')
     end
   end

@@ -17,9 +17,34 @@ p.flash_notice {
 
 #profile_pic {
   float: left;
-  padding: 4px;
+  padding-right: 4px;
 }
 
 iframe.form {
   float: left;
+}
+
+div.field {
+  padding-top: 1em;
+}
+
+div.field label {
+  float: left;
+  text-align: right;
+  width: 100px;
+  padding-right: 4px;
+}
+
+div.actions {
+  padding-left: 104px;
+}
+
+div.field_with_errors {
+  display: inline;
+  padding: 0px;
+  background-color: white;
+}
+
+div.field_with_errors label {
+  color: red;
 }
