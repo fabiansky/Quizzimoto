@@ -39,6 +39,11 @@ describe Quiz do
     quiz.video_id.should_not be_nil
   end
 
+  it 'has a form_id' do
+    quiz = Factory :quiz
+    quiz.form_id.should_not be_nil
+  end
+
   it 'should not allow mass assignment to owner_id' do
     quiz = Factory :quiz
     quiz.update_attributes!(:owner_id => 'new owner_id')
