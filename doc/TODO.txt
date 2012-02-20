@@ -1,15 +1,22 @@
 TODO
 ====
 
+Remove the XML stuff from the controllers.
+Tweak the form.
+Pull out unnecessary fields in the new quiz form.
+After creating a new quiz, edit the quiz.
+The edit quiz page should have sections.
+The form_id section should have some instructions.
 Use a YouTube dev key:
   Pass it through the Signet API calls.
   Document it in README_FOR_APP.
-Don't let the user edit someone else's video:
-  Don't even show them the edit link.
 Give the user a link to upload or record videos.
 Let the user search for videos.
 Give the user a list of his own videos.
 Let the user select a video for the quiz.
+Let the user create keyframes that pause the video.
+Don't let the user edit someone else's video:
+  Don't even show them the edit link.
 Let users delete quizzes on the edit page:
   Tell them that it won't delete the associated spreadsheets or video.
 The show page shows the form name, not the quiz name.
