@@ -70,11 +70,26 @@ class ApplicationController < ActionController::Base
     #
     #   response = @client.execute(plus.people.get, :userId => 'me')
     #   raise AuthorizationError if response.status == 401
+    #
+    # You don't need to do this for
+    # @client.authorization.fetch_protected_resource since Signet will
+    # automatically raies a Signet::AuthorizationError.
     def handle_authorization_error
       session[:oauth2_token] = nil
       flash[:notice] = %q{
         Your session has expired.  Please log in again to continue.
       }
       redirect_to oauth2_authorize_url
+    end
+
+    # This wraps Signet's fetch_protected_resource method and adds the
+    # X-GData-Key header.
+    #
+    # This is basically the only thing YouTube specific that is needed to use
+    # Signet with YouTube.
+    def fetch_youtube_resource(options = {})
+      options[:headers] ||= {}
+      options[:headers]['X-GData-Key'] ||= 'key=' + APP_CONFIG['youtube']['dev_key']
+      @client.authorization.fetch_protected_resource(options)
     end
 end
