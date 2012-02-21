@@ -1,0 +1,804 @@
+{
+ "apiVersion": "2.1",
+ "data": {
+  "updated": "2012-02-20T23:37:03.778Z",
+  "totalItems": 15,
+  "startIndex": 1,
+  "itemsPerPage": 25,
+  "items": [
+   {
+    "id": "0HYHG3fuzvk",
+    "uploaded": "2007-02-19T00:49:07.000Z",
+    "updated": "2012-02-19T21:54:02.000Z",
+    "uploader": "mathcrazytutoring",
+    "category": "Entertainment",
+    "title": "Pythagorean Theorem in 60 Seconds",
+    "description": "A quick overview of how the pythagorean theorem can be used",
+    "tags": [
+     "math",
+     "crazy",
+     "mathcrazy",
+     "mathcrazymadera",
+     "madera",
+     "tutor",
+     "tutoring",
+     "algebra",
+     "geometry",
+     "pythagorean",
+     "theorem"
+    ],
+    "thumbnail": {
+     "sqDefault": "http://i.ytimg.com/vi/0HYHG3fuzvk/default.jpg",
+     "hqDefault": "http://i.ytimg.com/vi/0HYHG3fuzvk/hqdefault.jpg"
+    },
+    "player": {
+     "default": "https://www.youtube.com/watch?v=0HYHG3fuzvk&feature=youtube_gdata_player",
+     "mobile": "https://m.youtube.com/details?v=0HYHG3fuzvk"
+    },
+    "content": {
+     "5": "https://www.youtube.com/v/0HYHG3fuzvk?version=3&f=videos&app=youtube_gdata",
+     "1": "rtsp://v4.cache7.c.youtube.com/CiILENy73wIaGQn5zu53Gwd20BMYDSANFEgGUgZ2aWRlb3MM/0/0/0/video.3gp",
+     "6": "rtsp://v5.cache3.c.youtube.com/CiILENy73wIaGQn5zu53Gwd20BMYESARFEgGUgZ2aWRlb3MM/0/0/0/video.3gp"
+    },
+    "duration": 95,
+    "recorded": "2007-02-12",
+    "location": "Math Crazy Madera",
+    "rating": 4.713615,
+    "likeCount": "396",
+    "ratingCount": 426,
+    "viewCount": 201778,
+    "favoriteCount": 295,
+    "commentCount": 497,
+    "accessControl": {
+     "comment": "allowed",
+     "commentVote": "allowed",
+     "videoRespond": "moderated",
+     "rate": "allowed",
+     "embed": "allowed",
+     "list": "allowed",
+     "autoPlay": "allowed",
+     "syndicate": "allowed"
+    }
+   },
+   {
+    "id": "pVo6szYE13Y",
+    "uploaded": "2011-02-27T14:26:21.000Z",
+    "updated": "2012-02-05T23:31:11.000Z",
+    "uploader": "anticsanimation",
+    "category": "Education",
+    "title": "Pythagoras in 60 Seconds",
+    "description": "Short film by Alan Kitching, made in 1986. Apart from explaining the famous theorem, it is also conceived as a \"visual proof\"... ie, whereas a still diagram can show a single instance of something, animation can show all possible instances... and that can make the difference between a simple illustration and an actual proof. For today's Antics 2-D animation software, see Antics Workshop at www.antics1.demon.co.uk.",
+    "tags": [
+     "Pythagoras",
+     "proved",
+     "in",
+     "60",
+     "seconds:",
+     "animation",
+     "mathematics",
+     "geometry",
+     "graphics",
+     "diagram",
+     "software",
+     "visual",
+     "proof",
+     "theorem",
+     "computer animation",
+     "education",
+     "Antics",
+     "2-D",
+     "Alan Kitching",
+     "animated",
+     "cartoon"
+    ],
+    "thumbnail": {
+     "sqDefault": "http://i.ytimg.com/vi/pVo6szYE13Y/default.jpg",
+     "hqDefault": "http://i.ytimg.com/vi/pVo6szYE13Y/hqdefault.jpg"
+    },
+    "player": {
+     "default": "https://www.youtube.com/watch?v=pVo6szYE13Y&feature=youtube_gdata_player",
+     "mobile": "https://m.youtube.com/details?v=pVo6szYE13Y"
+    },
+    "content": {
+     "5": "https://www.youtube.com/v/pVo6szYE13Y?version=3&f=videos&app=youtube_gdata",
+     "1": "rtsp://v3.cache3.c.youtube.com/CiILENy73wIaGQl21wQ2szpapRMYDSANFEgGUgZ2aWRlb3MM/0/0/0/video.3gp",
+     "6": "rtsp://v2.cache4.c.youtube.com/CiILENy73wIaGQl21wQ2szpapRMYESARFEgGUgZ2aWRlb3MM/0/0/0/video.3gp"
+    },
+    "duration": 64,
+    "viewCount": 4241,
+    "favoriteCount": 16,
+    "commentCount": 3,
+    "accessControl": {
+     "comment": "moderated",
+     "commentVote": "denied",
+     "videoRespond": "moderated",
+     "rate": "denied",
+     "embed": "allowed",
+     "list": "allowed",
+     "autoPlay": "allowed",
+     "syndicate": "allowed",
+     "group": {
+      "friends": {
+       "comment": "allowed"
+      }
+     }
+    }
+   },
+   {
+    "id": "mOvpV0CuEdc",
+    "uploaded": "2007-10-11T03:57:14.000Z",
+    "updated": "2012-02-14T15:55:39.000Z",
+    "uploader": "jalapeno808",
+    "category": "Travel",
+    "title": "Bronowski on Pythagoras' Theorem",
+    "description": "Jacob Bronowski explains the significance of the Pythagorean theorem",
+    "tags": [
+     "math",
+     "maths",
+     "pythagoras",
+     "bronowski"
+    ],
+    "thumbnail": {
+     "sqDefault": "http://i.ytimg.com/vi/mOvpV0CuEdc/default.jpg",
+     "hqDefault": "http://i.ytimg.com/vi/mOvpV0CuEdc/hqdefault.jpg"
+    },
+    "player": {
+     "default": "https://www.youtube.com/watch?v=mOvpV0CuEdc&feature=youtube_gdata_player",
+     "mobile": "https://m.youtube.com/details?v=mOvpV0CuEdc"
+    },
+    "content": {
+     "5": "https://www.youtube.com/v/mOvpV0CuEdc?version=3&f=videos&app=youtube_gdata",
+     "1": "rtsp://v6.cache7.c.youtube.com/CiILENy73wIaGQnXEa5AV-nrmBMYDSANFEgGUgZ2aWRlb3MM/0/0/0/video.3gp",
+     "6": "rtsp://v5.cache2.c.youtube.com/CiILENy73wIaGQnXEa5AV-nrmBMYESARFEgGUgZ2aWRlb3MM/0/0/0/video.3gp"
+    },
+    "duration": 449,
+    "rating": 4.9534883,
+    "likeCount": "85",
+    "ratingCount": 86,
+    "viewCount": 34975,
+    "favoriteCount": 170,
+    "commentCount": 33,
+    "accessControl": {
+     "comment": "allowed",
+     "commentVote": "allowed",
+     "videoRespond": "allowed",
+     "rate": "allowed",
+     "embed": "allowed",
+     "list": "allowed",
+     "autoPlay": "allowed",
+     "syndicate": "allowed"
+    }
+   },
+   {
+    "id": "DUCZXn9RZ9s",
+    "uploaded": "2007-11-22T03:33:14.000Z",
+    "updated": "2012-02-19T23:18:11.000Z",
+    "uploader": "mathwizard1",
+    "category": "Education",
+    "title": "scarecrow doesn't get a brain after all",
+    "description": "Watch the scarecrow mess up the pythagorean theorem",
+    "tags": [
+     "wizard",
+     "of",
+     "oz",
+     "scare",
+     "crow",
+     "brain",
+     "pythagorean",
+     "theorem"
+    ],
+    "thumbnail": {
+     "sqDefault": "http://i.ytimg.com/vi/DUCZXn9RZ9s/default.jpg",
+     "hqDefault": "http://i.ytimg.com/vi/DUCZXn9RZ9s/hqdefault.jpg"
+    },
+    "player": {
+     "default": "https://www.youtube.com/watch?v=DUCZXn9RZ9s&feature=youtube_gdata_player"
+    },
+    "content": {
+     "5": "https://www.youtube.com/v/DUCZXn9RZ9s?version=3&f=videos&app=youtube_gdata",
+     "1": "rtsp://v3.cache1.c.youtube.com/CiILENy73wIaGQnbZ1F_XplADRMYDSANFEgGUgZ2aWRlb3MM/0/0/0/video.3gp",
+     "6": "rtsp://v5.cache3.c.youtube.com/CiILENy73wIaGQnbZ1F_XplADRMYESARFEgGUgZ2aWRlb3MM/0/0/0/video.3gp"
+    },
+    "duration": 60,
+    "rating": 4.857143,
+    "likeCount": "61",
+    "ratingCount": 63,
+    "viewCount": 90287,
+    "favoriteCount": 121,
+    "commentCount": 154,
+    "accessControl": {
+     "comment": "allowed",
+     "commentVote": "allowed",
+     "videoRespond": "allowed",
+     "rate": "allowed",
+     "embed": "allowed",
+     "list": "allowed",
+     "autoPlay": "allowed",
+     "syndicate": "allowed"
+    }
+   },
+   {
+    "id": "auK6zXrNVN4",
+    "uploaded": "2007-10-31T15:53:34.000Z",
+    "updated": "2012-02-13T00:29:38.000Z",
+    "uploader": "yourteachermathhelp",
+    "category": "Education",
+    "title": "Converse of Pythagorean Theorem - YourTeacher.com - Math Help",
+    "description": "For a complete lesson on Converse of the Pythagorean Theorem, go to www.yourteacher.com - 1000+ online math lessons featuring a personal math teacher inside every lesson! In this lesson, students learn the Converse of the Pythagorean Theorem, which states that if the sum of the squares of the lengths of two sides of a triangle is equal to the sum of the square of the third side, then the triangle is a right triangle. Students also learn the following related theorems. If the sum of the squares of the lengths of two sides of a triangle is less than the sum of the square of the third side, then the triangle is obtuse. If the sum of the squares of the lengths of two sides of a triangle is greater than the sum of the square of the third side, then the triangle is acute. If the sum of the lengths of any two sides of a triangle is less than or equal to the length of the third side, then the triangle is not possible. Students are then given the lengths of the sides of a triangle, and are asked if the triangle is acute, right, obtuse, or not possible. A review of the Pythagorean Triples, such as 3-4-5 or 5-12-13, is also included in this lesson.",
+    "tags": [
+     "converse",
+     "pythagorean",
+     "theorem"
+    ],
+    "thumbnail": {
+     "sqDefault": "http://i.ytimg.com/vi/auK6zXrNVN4/default.jpg",
+     "hqDefault": "http://i.ytimg.com/vi/auK6zXrNVN4/hqdefault.jpg"
+    },
+    "player": {
+     "default": "https://www.youtube.com/watch?v=auK6zXrNVN4&feature=youtube_gdata_player"
+    },
+    "content": {
+     "5": "https://www.youtube.com/v/auK6zXrNVN4?version=3&f=videos&app=youtube_gdata",
+     "1": "rtsp://v7.cache1.c.youtube.com/CiILENy73wIaGQneVM16zbriahMYDSANFEgGUgZ2aWRlb3MM/0/0/0/video.3gp",
+     "6": "rtsp://v4.cache3.c.youtube.com/CiILENy73wIaGQneVM16zbriahMYESARFEgGUgZ2aWRlb3MM/0/0/0/video.3gp"
+    },
+    "duration": 196,
+    "rating": 4.4166665,
+    "likeCount": "41",
+    "ratingCount": 48,
+    "viewCount": 28131,
+    "favoriteCount": 47,
+    "commentCount": 66,
+    "accessControl": {
+     "comment": "allowed",
+     "commentVote": "allowed",
+     "videoRespond": "allowed",
+     "rate": "allowed",
+     "embed": "allowed",
+     "list": "allowed",
+     "autoPlay": "allowed",
+     "syndicate": "allowed"
+    }
+   },
+   {
+    "id": "hN7FG15lIh4",
+    "uploaded": "2008-01-21T17:54:05.000Z",
+    "updated": "2012-02-18T20:40:11.000Z",
+    "uploader": "yourteachermathhelp",
+    "category": "Education",
+    "title": "Pythagorean Theorem Word Problems -YourTeacher.com - Math Help",
+    "description": "For a complete lesson on Pythagorean Theorem word problems, go to www.yourteacher.com - 1000+ online math lessons featuring a personal math teacher inside every lesson! In this lesson, students use the Pythagorean Theorem to find missing side lengths of right triangles in a variety of word problems. The word problems involve right triangles formed by diagonals of rectangles, squares, and rhombuses, as well as ladders that lean against buildings, heights of fallen trees, distances traveled, the range of an internet signal, and the diagonal of a rectangular box.",
+    "tags": [
+     "right",
+     "triangles",
+     "triangle",
+     "pythagorean",
+     "theorem",
+     "word",
+     "problems",
+     "problem",
+     "geometry",
+     "applications",
+     "uses",
+     "use",
+     "application",
+     "real",
+     "life"
+    ],
+    "thumbnail": {
+     "sqDefault": "http://i.ytimg.com/vi/hN7FG15lIh4/default.jpg",
+     "hqDefault": "http://i.ytimg.com/vi/hN7FG15lIh4/hqdefault.jpg"
+    },
+    "player": {
+     "default": "https://www.youtube.com/watch?v=hN7FG15lIh4&feature=youtube_gdata_player",
+     "mobile": "https://m.youtube.com/details?v=hN7FG15lIh4"
+    },
+    "content": {
+     "5": "https://www.youtube.com/v/hN7FG15lIh4?version=3&f=videos&app=youtube_gdata",
+     "1": "rtsp://v7.cache8.c.youtube.com/CiILENy73wIaGQkeImVeG8XehBMYDSANFEgGUgZ2aWRlb3MM/0/0/0/video.3gp",
+     "6": "rtsp://v5.cache2.c.youtube.com/CiILENy73wIaGQkeImVeG8XehBMYESARFEgGUgZ2aWRlb3MM/0/0/0/video.3gp"
+    },
+    "duration": 174,
+    "rating": 3.6553192,
+    "likeCount": "312",
+    "ratingCount": 470,
+    "viewCount": 173463,
+    "favoriteCount": 315,
+    "commentCount": 695,
+    "accessControl": {
+     "comment": "allowed",
+     "commentVote": "allowed",
+     "videoRespond": "allowed",
+     "rate": "allowed",
+     "embed": "allowed",
+     "list": "allowed",
+     "autoPlay": "allowed",
+     "syndicate": "allowed"
+    }
+   },
+   {
+    "id": "rHyaXYtjqvY",
+    "uploaded": "2007-01-30T17:43:52.000Z",
+    "updated": "2012-02-19T21:02:35.000Z",
+    "uploader": "mathcrazytutoring",
+    "category": "Howto",
+    "title": "Simplifying Square Roots in 60 Seconds",
+    "description": "A 60 second run-down of simplifying square roots",
+    "tags": [
+     "math",
+     "crazy",
+     "mathcrazy",
+     "mathcrazymadera",
+     "madera",
+     "tutor",
+     "tutoring",
+     "square",
+     "squareroot",
+     "root",
+     "roots",
+     "simplify"
+    ],
+    "thumbnail": {
+     "sqDefault": "http://i.ytimg.com/vi/rHyaXYtjqvY/default.jpg",
+     "hqDefault": "http://i.ytimg.com/vi/rHyaXYtjqvY/hqdefault.jpg"
+    },
+    "player": {
+     "default": "https://www.youtube.com/watch?v=rHyaXYtjqvY&feature=youtube_gdata_player",
+     "mobile": "https://m.youtube.com/details?v=rHyaXYtjqvY"
+    },
+    "content": {
+     "5": "https://www.youtube.com/v/rHyaXYtjqvY?version=3&f=videos&app=youtube_gdata",
+     "1": "rtsp://v3.cache3.c.youtube.com/CiILENy73wIaGQn2qmOLXZp8rBMYDSANFEgGUgZ2aWRlb3MM/0/0/0/video.3gp",
+     "6": "rtsp://v2.cache6.c.youtube.com/CiILENy73wIaGQn2qmOLXZp8rBMYESARFEgGUgZ2aWRlb3MM/0/0/0/video.3gp"
+    },
+    "duration": 83,
+    "recorded": "2007-01-24",
+    "location": "Math Crazy Madera",
+    "rating": 4.7572255,
+    "likeCount": "325",
+    "ratingCount": 346,
+    "viewCount": 131260,
+    "favoriteCount": 278,
+    "commentCount": 327,
+    "accessControl": {
+     "comment": "allowed",
+     "commentVote": "allowed",
+     "videoRespond": "moderated",
+     "rate": "allowed",
+     "embed": "allowed",
+     "list": "allowed",
+     "autoPlay": "allowed",
+     "syndicate": "allowed"
+    }
+   },
+   {
+    "id": "w7x98MiQ_wg",
+    "uploaded": "2008-10-26T15:29:31.000Z",
+    "updated": "2012-02-14T15:26:55.000Z",
+    "uploader": "cunybmcc",
+    "category": "Education",
+    "title": "Historian of Numbers",
+    "description": "\"Most people think of mathematics as something dry and theoretical, with little connection to the real world, says Yibao Xu. \"But if you can look at math in its historical context, you can see its relevance -- and richness.\" An assistant professor in BMCC's department of mathematics, Xu overlays a historical perspective on each of the three math courses he teaches -- Pre-Algebra, Fundamentals of Modern Mathematics and Introduction to Statistics. \"Ive taught the fundamentals course every semester that I've been at BMCC and it's one I especially enjoy,\" says Xu, who joined the faculty in 2003. \"It has something for everyone -- set theory, logic, group theory, the history of numeration systems.\" The course can also be something of an eye-opener. Other cultures, other numbering systems \"Most people, including my students, take our western decimal-based counting system for granted,\" Xu says. \"But over the course of history, there have been many other systems, all valid. For example, the ancient Mayans created a base-20 system; the Babylonians used a base-60 system.\" Vestiges of the Babylonian numbering scheme are evident in the Western approach to measuring time, \"with each hour divisible into 60 minutes, and each minute further divisible into 60 seconds,\" he says. Born in China, Xu studied mathematics and the history of mathematics at Inner Mongolia Normal University, from which he received his MS degree, and earned his Ph.D. at the CUNY Graduate Center. A member of several \u003cb\u003e...\u003c/b\u003e",
+    "tags": [
+     "BMCC",
+     "Math"
+    ],
+    "thumbnail": {
+     "sqDefault": "http://i.ytimg.com/vi/w7x98MiQ_wg/default.jpg",
+     "hqDefault": "http://i.ytimg.com/vi/w7x98MiQ_wg/hqdefault.jpg"
+    },
+    "player": {
+     "default": "https://www.youtube.com/watch?v=w7x98MiQ_wg&feature=youtube_gdata_player"
+    },
+    "content": {
+     "5": "https://www.youtube.com/v/w7x98MiQ_wg?version=3&f=videos&app=youtube_gdata",
+     "1": "rtsp://v7.cache6.c.youtube.com/CiILENy73wIaGQkI_5DI8H28wxMYDSANFEgGUgZ2aWRlb3MM/0/0/0/video.3gp",
+     "6": "rtsp://v4.cache7.c.youtube.com/CiILENy73wIaGQkI_5DI8H28wxMYESARFEgGUgZ2aWRlb3MM/0/0/0/video.3gp"
+    },
+    "duration": 397,
+    "rating": 4.8,
+    "likeCount": "5",
+    "ratingCount": 5,
+    "viewCount": 2473,
+    "favoriteCount": 8,
+    "commentCount": 4,
+    "accessControl": {
+     "comment": "moderated",
+     "commentVote": "allowed",
+     "videoRespond": "moderated",
+     "rate": "allowed",
+     "embed": "allowed",
+     "list": "allowed",
+     "autoPlay": "allowed",
+     "syndicate": "allowed"
+    }
+   },
+   {
+    "id": "CjrsuZijuC8",
+    "uploaded": "2011-03-11T04:20:17.000Z",
+    "updated": "2011-04-12T21:39:59.000Z",
+    "uploader": "shawnreidymusic",
+    "category": "Music",
+    "title": "Like Right Triangles - Shawn Reidy (Geometry remix)",
+    "description": "White boy butchers eminem song, enjoy\\ Pythagorean theorem P money let no one near him People would tell him his swagga aint tight But he would just reply \"all., My triangles are right\" Dont even tell me what Im suposed to do with my stride. Ya got your (30 60 90) where the hypotenuse is times two Of the smallest side The multiplications up to you Ya got your (45 45 90) isosceles yo, The hypotenuse is the side times the square root of 3 ya know? Both of these triangles have something in common They make my brain hurt Educated in Nompton Because it's A2 + B2 = C2 (squared) But buddy no it don't stop there This stuff is easy Thinkin the world is mine Until Trig comes along and gives ya a sin And it's a disaster such a catastrophe How these Tangents and Cosins make a mess of me Ya thinkin all hope's gone There's no chance for ya Then it suddenly pops in ya head SOH-CAH --TOA The battle is won But that was just question one Now ya gotta finish the rest Gotta hate this test. Im below my game I think I wanna cheat But I think to myself I dont wanna get in no beef That Aint me Plus I dont wanna hurt my teacher Cuz Im terrible at math and I kinda need her I tell myself Shawn, You know you can do this I check my time And I gotta hurry 30 seconds Left to complete this Whole mess I think I lost my mind but I barley even notice HOOK: Step by step, part to part, left right left We all fall down like Right Triangles Bit by bit, torn apart, we finish the quiz But the battle wages on for \u003cb\u003e...\u003c/b\u003e",
+    "tags": [
+     "Shawn",
+     "Reidy",
+     "Eminem",
+     "Shady",
+     "Geometry",
+     "Rap"
+    ],
+    "thumbnail": {
+     "sqDefault": "http://i.ytimg.com/vi/CjrsuZijuC8/default.jpg",
+     "hqDefault": "http://i.ytimg.com/vi/CjrsuZijuC8/hqdefault.jpg"
+    },
+    "player": {
+     "default": "https://www.youtube.com/watch?v=CjrsuZijuC8&feature=youtube_gdata_player",
+     "mobile": "https://m.youtube.com/details?v=CjrsuZijuC8"
+    },
+    "content": {
+     "5": "https://www.youtube.com/v/CjrsuZijuC8?version=3&f=videos&app=youtube_gdata",
+     "1": "rtsp://v2.cache4.c.youtube.com/CiILENy73wIaGQkvuKOYuew6ChMYDSANFEgGUgZ2aWRlb3MM/0/0/0/video.3gp",
+     "6": "rtsp://v6.cache7.c.youtube.com/CiILENy73wIaGQkvuKOYuew6ChMYESARFEgGUgZ2aWRlb3MM/0/0/0/video.3gp"
+    },
+    "duration": 163,
+    "aspectRatio": "widescreen",
+    "rating": 5.0,
+    "likeCount": "1",
+    "ratingCount": 1,
+    "viewCount": 227,
+    "favoriteCount": 0,
+    "commentCount": 1,
+    "accessControl": {
+     "comment": "allowed",
+     "commentVote": "allowed",
+     "videoRespond": "moderated",
+     "rate": "allowed",
+     "embed": "allowed",
+     "list": "allowed",
+     "autoPlay": "allowed",
+     "syndicate": "allowed"
+    }
+   },
+   {
+    "id": "zGpbSGj_vfE",
+    "uploaded": "2009-02-03T06:13:07.000Z",
+    "updated": "2012-02-19T23:51:08.000Z",
+    "uploader": "khanacademy",
+    "category": "Education",
+    "title": "Polar Coordinates 2",
+    "description": "Conversion from Cartesian to Polar Coordinates",
+    "tags": [
+     "cartesian",
+     "polar",
+     "coordinates",
+     "CC_8_G_8"
+    ],
+    "thumbnail": {
+     "sqDefault": "http://i.ytimg.com/vi/zGpbSGj_vfE/default.jpg",
+     "hqDefault": "http://i.ytimg.com/vi/zGpbSGj_vfE/hqdefault.jpg"
+    },
+    "player": {
+     "default": "https://www.youtube.com/watch?v=zGpbSGj_vfE&feature=youtube_gdata_player"
+    },
+    "content": {
+     "5": "https://www.youtube.com/v/zGpbSGj_vfE?version=3&f=videos&app=youtube_gdata",
+     "1": "rtsp://v4.cache8.c.youtube.com/CiILENy73wIaGQnxvf9oSFtqzBMYDSANFEgGUgZ2aWRlb3MM/0/0/0/video.3gp",
+     "6": "rtsp://v5.cache5.c.youtube.com/CiILENy73wIaGQnxvf9oSFtqzBMYESARFEgGUgZ2aWRlb3MM/0/0/0/video.3gp"
+    },
+    "duration": 571,
+    "rating": 5.0,
+    "likeCount": "117",
+    "ratingCount": 117,
+    "viewCount": 55073,
+    "favoriteCount": 33,
+    "commentCount": 25,
+    "accessControl": {
+     "comment": "allowed",
+     "commentVote": "allowed",
+     "videoRespond": "moderated",
+     "rate": "allowed",
+     "embed": "allowed",
+     "list": "allowed",
+     "autoPlay": "allowed",
+     "syndicate": "allowed"
+    }
+   },
+   {
+    "id": "qm4QR_ycRhY",
+    "uploaded": "2011-03-24T04:07:46.000Z",
+    "updated": "2012-02-10T23:59:24.000Z",
+    "uploader": "yalecourses",
+    "category": "Education",
+    "title": "17. Ray or Geometrical Optics II",
+    "description": "Fundamentals of Physics, II (PHYS 201) Ray diagrams are used to investigate the behavior of light incident on mirrors and lenses. The principle of least time is used to show that all rays from an object in front of a concave mirror focus on the image point if they are not too far from the axis. The experiments describing the breakdown of geometric optics are discussed. 00:00 - Chapter 1. Parabolic and Spherical Mirrors 34:16 - Chapter 2. Lenses 43:34 - Chapter 3. Focal Point 63:56 - Chapter 4. Magnifying Lenses Complete course materials are available at the Open Yale Courses website: open.yale.edu This course was recorded in Spring 2010.",
+    "tags": [
+     "focal point",
+     "radius of curvature",
+     "magnification"
+    ],
+    "thumbnail": {
+     "sqDefault": "http://i.ytimg.com/vi/qm4QR_ycRhY/default.jpg",
+     "hqDefault": "http://i.ytimg.com/vi/qm4QR_ycRhY/hqdefault.jpg"
+    },
+    "player": {
+     "default": "https://www.youtube.com/watch?v=qm4QR_ycRhY&feature=youtube_gdata_player",
+     "mobile": "https://m.youtube.com/details?v=qm4QR_ycRhY"
+    },
+    "content": {
+     "5": "https://www.youtube.com/v/qm4QR_ycRhY?version=3&f=videos&app=youtube_gdata",
+     "1": "rtsp://v2.cache1.c.youtube.com/CiILENy73wIaGQkWRpz8RxBuqhMYDSANFEgGUgZ2aWRlb3MM/0/0/0/video.3gp",
+     "6": "rtsp://v8.cache2.c.youtube.com/CiILENy73wIaGQkWRpz8RxBuqhMYESARFEgGUgZ2aWRlb3MM/0/0/0/video.3gp"
+    },
+    "duration": 4267,
+    "aspectRatio": "widescreen",
+    "location": "new haven",
+    "viewCount": 4347,
+    "favoriteCount": 14,
+    "accessControl": {
+     "comment": "denied",
+     "commentVote": "denied",
+     "videoRespond": "denied",
+     "rate": "denied",
+     "embed": "allowed",
+     "list": "allowed",
+     "autoPlay": "allowed",
+     "syndicate": "allowed"
+    }
+   },
+   {
+    "id": "tgqw2Tzo8ps",
+    "uploaded": "2011-04-15T17:18:37.000Z",
+    "updated": "2012-02-20T07:50:25.000Z",
+    "uploader": "sambotta",
+    "category": "Entertainment",
+    "title": "Michael Lerner Sam Botta Atlas Shrugged April 15 Movie Release Oscars",
+    "description": "ATLAS SHRUGGED Michael Lerner Ayn Rand Scott Brick Audible Amazon The Bachelor when there's genuinely romantic, genuinely sweet (and did we mention genuine?) televised proposals like this? Sam Botta IMDB search Tonya Roberts Charlies Angels, of two years, accountant Jesse Sloan, popped the...",
+    "tags": [
+     "Vevo",
+     "Wedding",
+     "Engagement",
+     "Betty",
+     "White",
+     "Donald",
+     "Trump",
+     "Bachelor",
+     "Bradley",
+     "Cooper",
+     "Sam",
+     "Botta",
+     "Spiritual",
+     "Women",
+     "Happy",
+     "Pea"
+    ],
+    "thumbnail": {
+     "sqDefault": "http://i.ytimg.com/vi/tgqw2Tzo8ps/default.jpg",
+     "hqDefault": "http://i.ytimg.com/vi/tgqw2Tzo8ps/hqdefault.jpg"
+    },
+    "player": {
+     "default": "https://www.youtube.com/watch?v=tgqw2Tzo8ps&feature=youtube_gdata_player",
+     "mobile": "https://m.youtube.com/details?v=tgqw2Tzo8ps"
+    },
+    "content": {
+     "5": "https://www.youtube.com/v/tgqw2Tzo8ps?version=3&f=videos&app=youtube_gdata",
+     "1": "rtsp://v8.cache1.c.youtube.com/CiILENy73wIaGQmb8ug82bAKthMYDSANFEgGUgZ2aWRlb3MM/0/0/0/video.3gp",
+     "6": "rtsp://v3.cache6.c.youtube.com/CiILENy73wIaGQmb8ug82bAKthMYESARFEgGUgZ2aWRlb3MM/0/0/0/video.3gp"
+    },
+    "duration": 58,
+    "aspectRatio": "widescreen",
+    "rating": 2.2222223,
+    "likeCount": "33",
+    "ratingCount": 108,
+    "viewCount": 171012,
+    "favoriteCount": 26,
+    "commentCount": 79,
+    "accessControl": {
+     "comment": "allowed",
+     "commentVote": "allowed",
+     "videoRespond": "moderated",
+     "rate": "allowed",
+     "embed": "allowed",
+     "list": "allowed",
+     "autoPlay": "allowed",
+     "syndicate": "allowed"
+    }
+   },
+   {
+    "id": "6QJtWfIiyZo",
+    "uploaded": "2007-01-28T01:50:56.000Z",
+    "updated": "2012-02-19T16:53:00.000Z",
+    "uploader": "khanacademy",
+    "category": "Education",
+    "title": "Simplifying radicals",
+    "description": "Using exponent rules to simplify radicals or square roots",
+    "tags": [
+     "Math",
+     "radical",
+     "square",
+     "root",
+     "exponent",
+     "simplification"
+    ],
+    "thumbnail": {
+     "sqDefault": "http://i.ytimg.com/vi/6QJtWfIiyZo/default.jpg",
+     "hqDefault": "http://i.ytimg.com/vi/6QJtWfIiyZo/hqdefault.jpg"
+    },
+    "player": {
+     "default": "https://www.youtube.com/watch?v=6QJtWfIiyZo&feature=youtube_gdata_player"
+    },
+    "content": {
+     "5": "https://www.youtube.com/v/6QJtWfIiyZo?version=3&f=videos&app=youtube_gdata",
+     "1": "rtsp://v3.cache7.c.youtube.com/CiILENy73wIaGQmaySLyWW0C6RMYDSANFEgGUgZ2aWRlb3MM/0/0/0/video.3gp",
+     "6": "rtsp://v4.cache8.c.youtube.com/CiILENy73wIaGQmaySLyWW0C6RMYESARFEgGUgZ2aWRlb3MM/0/0/0/video.3gp"
+    },
+    "duration": 583,
+    "rating": 4.8366337,
+    "likeCount": "388",
+    "ratingCount": 404,
+    "viewCount": 178813,
+    "favoriteCount": 201,
+    "commentCount": 238,
+    "accessControl": {
+     "comment": "allowed",
+     "commentVote": "allowed",
+     "videoRespond": "moderated",
+     "rate": "allowed",
+     "embed": "allowed",
+     "list": "allowed",
+     "autoPlay": "allowed",
+     "syndicate": "allowed"
+    }
+   },
+   {
+    "id": "OFA7e02LS_U",
+    "uploaded": "2009-07-13T01:32:21.000Z",
+    "updated": "2011-10-28T14:27:00.000Z",
+    "uploader": "assyrian333",
+    "category": "Education",
+    "title": "Mesopotamian Inventions~ Click to Learn Something!",
+    "description": "******╔═╦╗╔╦╗╔═╦═╦╦╦╦╗╔═╗***** ******║╚╣║║║╚╣╚╣╔╣╔╣║╚╣═╣***** ******╠╗║╚╝║║╠╗║╚╣║║║║║═╣***** ******╚═╩══╩═╩═╩═╩╝╚╩═╩═╝***** A collection...",
+    "tags": [
+     "Mesopotamian",
+     "Inventions",
+     "Learn",
+     "Akkadians",
+     "Babylonians",
+     "Mesopotamia",
+     "Iraq",
+     "Babel",
+     "Babylon",
+     "Assyrians",
+     "Chaldeans",
+     "Syriacs",
+     "Suryoyo",
+     "Suraya",
+     "Sumerians",
+     "Sumer",
+     "Chaldea",
+     "Contributions",
+     "Math",
+     "Science",
+     "Reading",
+     "Architecture",
+     "Greek",
+     "Column",
+     "Roman",
+     "Roma",
+     "Europe",
+     "Middle",
+     "East",
+     "Glass",
+     "Farming",
+     "Wheel.",
+     "Irrigation.",
+     "Seed",
+     "Plow.",
+     "Ox",
+     "Drawn",
+     "Mortar",
+     "Pestle.",
+     "Sickle",
+     "Flint",
+     "Blade.",
+     "Domestication",
+     "of",
+     "Sheep",
+     "Goat=Milk.",
+     "Dams.",
+     "Cultivation",
+     "Grains.",
+     "Levees.",
+     "Beer.",
+     "Wine.",
+     "Saffron.",
+     "Baklawa.",
+     "Frying",
+     "Pans.",
+     "Drinking",
+     "Straws.",
+     "Funerary",
+     "Objects.",
+     "War.",
+     "Fighting.",
+     "Empire."
+    ],
+    "thumbnail": {
+     "sqDefault": "http://i.ytimg.com/vi/OFA7e02LS_U/default.jpg",
+     "hqDefault": "http://i.ytimg.com/vi/OFA7e02LS_U/hqdefault.jpg"
+    },
+    "player": {
+     "default": "https://www.youtube.com/watch?v=OFA7e02LS_U&feature=youtube_gdata_player"
+    },
+    "content": {
+     "5": "https://www.youtube.com/v/OFA7e02LS_U?version=3&f=videos&app=youtube_gdata",
+     "1": "rtsp://v8.cache6.c.youtube.com/CiILENy73wIaGQn1S4tNeztQOBMYDSANFEgGUgZ2aWRlb3MM/0/0/0/video.3gp",
+     "6": "rtsp://v4.cache1.c.youtube.com/CiILENy73wIaGQn1S4tNeztQOBMYESARFEgGUgZ2aWRlb3MM/0/0/0/video.3gp"
+    },
+    "duration": 192,
+    "recorded": "2009-07-12",
+    "rating": 4.304348,
+    "likeCount": "19",
+    "ratingCount": 23,
+    "viewCount": 5227,
+    "favoriteCount": 17,
+    "commentCount": 56,
+    "accessControl": {
+     "comment": "allowed",
+     "commentVote": "allowed",
+     "videoRespond": "moderated",
+     "rate": "allowed",
+     "embed": "allowed",
+     "list": "allowed",
+     "autoPlay": "allowed",
+     "syndicate": "allowed"
+    }
+   },
+   {
+    "id": "3HbZ8na0U2o",
+    "uploaded": "2012-02-10T11:34:03.000Z",
+    "updated": "2012-02-20T09:41:57.000Z",
+    "uploader": "sambotta",
+    "category": "Entertainment",
+    "title": "Tanya Roberts Outrageous Love & Friendship Sam Botta-Live Fearless-Chris Shining,Executive Producer",
+    "description": "Her husband of 25 years had died from illness, she was there for him and has overcome the grief and built a new life. Sam Botta: I asked you the secret of lifetime love (two years before)... And you said your man at the time adores you... Tanya Roberts: My man died 18 months ago after 25 years of a beautiful marriage, I grew up with him, and he did adore me, I adored him, and that's what happens, I'm lucky to have had 25 years of outrageous love and friendship. SB: How did you get through the pain? TR: If I didn't pull myself together I wouldn't have been able to keep him alive and take care of him, that's what you do. It's Nothing heroic you just do it. You don't want to see the one you love totally screwed up.. and you manage. I love you. www.imdb.me/livefearless IMDB.COM: www.imdb.com Tanya Roberts came from modest beginnings in the Bronx, New York, the daughter of a pen salesman (Irish) and a mother (Jewish) who were divorced before she reached high school. Tanya dropped out of high school at age 15, got married and hitchhiked around the country until her mother-in-law had the marriage annulled. She met psychology student Barry Roberts in New York while waiting in line to see a movie. A few months later, she proposed to him in a subway station, and they were married. .. Beautiful love story. Secretly hope. Live life with the kind of love that lasts. The memories, the hopes, the dreams. Never forgetting, especially On a sad day when we've lost a life-altering talent \u003cb\u003e...\u003c/b\u003e",
+    "tags": [
+     "loss",
+     "life"
+    ],
+    "thumbnail": {
+     "sqDefault": "http://i.ytimg.com/vi/3HbZ8na0U2o/default.jpg",
+     "hqDefault": "http://i.ytimg.com/vi/3HbZ8na0U2o/hqdefault.jpg"
+    },
+    "player": {
+     "default": "https://www.youtube.com/watch?v=3HbZ8na0U2o&feature=youtube_gdata_player",
+     "mobile": "https://m.youtube.com/details?v=3HbZ8na0U2o"
+    },
+    "content": {
+     "5": "https://www.youtube.com/v/3HbZ8na0U2o?version=3&f=videos&app=youtube_gdata",
+     "1": "rtsp://v5.cache7.c.youtube.com/CiILENy73wIaGQlqU7R28tl23BMYDSANFEgGUgZ2aWRlb3MM/0/0/0/video.3gp",
+     "6": "rtsp://v7.cache8.c.youtube.com/CiILENy73wIaGQlqU7R28tl23BMYESARFEgGUgZ2aWRlb3MM/0/0/0/video.3gp"
+    },
+    "duration": 54,
+    "aspectRatio": "widescreen",
+    "rating": 2.3639345,
+    "likeCount": "104",
+    "ratingCount": 305,
+    "viewCount": 294476,
+    "favoriteCount": 55,
+    "commentCount": 182,
+    "accessControl": {
+     "comment": "allowed",
+     "commentVote": "allowed",
+     "videoRespond": "moderated",
+     "rate": "allowed",
+     "embed": "allowed",
+     "list": "allowed",
+     "autoPlay": "allowed",
+     "syndicate": "allowed"
+    }
+   }
+  ]
+ }
+}
