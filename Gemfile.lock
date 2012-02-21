@@ -172,11 +172,12 @@ DEPENDENCIES
   capybara
   countries
   factory_girl_rails (~> 1.2)
-  google-api-client
+  google-api-client (~> 0.4.0)
   httpadapter
   pry
   rails (= 3.0.5)
   rspec-rails (~> 2.6)
   ruby-debug19
+  signet (~> 0.3.0)
   sqlite3
   webmock
