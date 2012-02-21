@@ -29,7 +29,7 @@ def valid_login_token
    'issued_at'     => Time.now}
 end
 
-# Stub out: https://www.googleapis.com/discovery/v1/apis/plus/v1/rest
+# www.googleapis.com/discovery/v1/apis/plus/v1/rest
 def stub_plus_discovery_document
   filename = Rails.root.join(
     'spec/support/documents/www.googleapis.com/discovery/v1/apis/plus/v1/rest')
@@ -37,10 +37,22 @@ def stub_plus_discovery_document
     to_return(:body => IO.read(filename))
 end
 
+# www.googleapis.com/plus/v1/people/me
 def stub_current_user_profile
   filename = Rails.root.join(
     'spec/support/documents/www.googleapis.com/plus/v1/people/me')
   stub_request(:get, 'https://www.googleapis.com/plus/v1/people/me').
     with(:headers => {'Authorization'=>'Bearer 12345'}).
     to_return(:body => IO.read(filename))
+end
+
+# gdata.youtube.com/feeds/api/videos/0HYHG3fuzvk?alt=jsonc&v=2
+def stub_video_entry
+  filename = Rails.root.join(
+    'spec/support/documents/gdata.youtube.com/feeds/api/videos/0HYHG3fuzvk?alt=jsonc&v=2')
+  stub_request(:get, 'https://gdata.youtube.com/feeds/api/videos/0HYHG3fuzvk?alt=jsonc&v=2').
+    with(:headers =>
+      {'Authorization' => 'Bearer 12345',
+       'X-Gdata-Key'   => 'key=AI39si7sYNfF3-xVbZUalnyU-0CjvnwucP0u4edZ_uCm02GaM8RajpeTBJ3LWprdw_THhdvDNwjy2UPO4dCH3a0LG8B25cQnkQ'}).
+    to_return(:status => 200, :body => IO.read(filename))
 end
