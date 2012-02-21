@@ -47,7 +47,7 @@ General advice concerning client libraries:
 	Understand what the client library does:
 		Read the documentation and the samples
 		Don't be afraid to skim the source, especially the tests!
-		Use client libraries when they make your life easier
+	Use client libraries when they make your life easier
 An overview of Google client libraries for Ruby
 	google-api-ruby-client:
 		It automatically creates bindings for newer Google APIs
@@ -115,6 +115,7 @@ Doing TDD with web services
 	Common reaction:
 		But TDD with web services is hard!
 		How do you write a stub for something you barely understand?
+		Yawn.  Hurry up and show me some JavaScript!
 	My solution:
 		Disclaimer:
 			I'm not even a full-time Ruby developer
@@ -139,7 +140,7 @@ Doing TDD with web services
 			Use the same techniques to handle all your error cases:
 				Such as when your OAuth2 access token expires
 				Or when you don't get any search results
-			Wrap your stubs in functions
+			Wrap your stubs in functions:
 				That way you can reuse them for multiple functional and integration tests
 			Read the source code for Signet in order to simulate an OAuth2 login
 Live demo:
