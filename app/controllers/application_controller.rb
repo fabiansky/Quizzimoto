@@ -4,7 +4,8 @@ class ApplicationController < ActionController::Base
   before_filter :setup_oauth2
   protect_from_forgery
   helper_method :logged_in?, :current_user_profile, :current_user_id
-  rescue_from AuthorizationError, :with => :handle_authorization_error
+  rescue_from AuthorizationError, Signet::AuthorizationError,
+    :with => :handle_authorization_error
 
   protected
 
