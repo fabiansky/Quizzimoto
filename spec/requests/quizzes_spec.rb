@@ -100,14 +100,7 @@ describe "Quizzes" do
           {'Authorization' => 'Bearer 12345', 
            'X-Gdata-Key'   => 'key=AI39si7sYNfF3-xVbZUalnyU-0CjvnwucP0u4edZ_uCm02GaM8RajpeTBJ3LWprdw_THhdvDNwjy2UPO4dCH3a0LG8B25cQnkQ'}).
         to_return(:status => 200, :body => IO.read(filename))
-
-      filename = Rails.root.join(
-        'spec/support/documents/gdata.youtube.com/feeds/api/videos/0HYHG3fuzvk?alt=jsonc&v=2')
-      stub_request(:get, 'https://gdata.youtube.com/feeds/api/videos/0HYHG3fuzvk?alt=jsonc&v=2').
-        with(:headers =>
-          {'Authorization' => 'Bearer 12345',
-           'X-Gdata-Key'   => 'key=AI39si7sYNfF3-xVbZUalnyU-0CjvnwucP0u4edZ_uCm02GaM8RajpeTBJ3LWprdw_THhdvDNwjy2UPO4dCH3a0LG8B25cQnkQ'}).
-        to_return(:status => 200, :body => IO.read(filename))
+      stub_video_entry
 
       quiz = Factory :quiz, :video_id => nil
       login
