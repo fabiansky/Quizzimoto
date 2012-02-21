@@ -9,28 +9,34 @@ class ApplicationController < ActionController::Base
 
   protected
 
+    attr_accessor :google_client
+
     # At the beginning of the request, make sure the OAuth token is available.
     # If it's not available, kick off the OAuth2 flow to authorize.
     def setup_oauth2
-      @client = Google::APIClient.new(
+      @google_client = Google::APIClient.new(
         :authorization => :oauth_2,
         :http_adapter  => HTTPAdapter::NetHTTPAdapter.new
       )
 
-      @client.authorization.client_id     = APP_CONFIG['oauth2']['client_id']
-      @client.authorization.client_secret = APP_CONFIG['oauth2']['client_secret']
-      @client.authorization.scope         = APP_CONFIG['oauth2']['scopes']
-      @client.authorization.redirect_uri  = oauth2_callback_url
-      @client.authorization.code          = params[:code] if params[:code]
+      @google_client.authorization.client_id     = APP_CONFIG['oauth2']['client_id']
+      @google_client.authorization.client_secret = APP_CONFIG['oauth2']['client_secret']
+      @google_client.authorization.scope         = APP_CONFIG['oauth2']['scopes']
+      @google_client.authorization.redirect_uri  = oauth2_callback_url
+      @google_client.authorization.code          = params[:code] if params[:code]
 
       # Load the access token here if it's available.
       if session[:oauth2_token]
-        @client.authorization.update_token!(session[:oauth2_token])
+        @google_client.authorization.update_token!(session[:oauth2_token])
       end
 
-      unless @client.authorization.access_token || request.path_info =~ /^\/oauth2/
+      unless @google_client.authorization.access_token || request.path_info =~ /^\/oauth2/
         redirect_to oauth2_authorize_url
       end
+    end
+
+    def signet_client
+      google_client.authorization
     end
 
     # Is the current user logged in?
@@ -43,8 +49,8 @@ class ApplicationController < ActionController::Base
     # Cache it in the session to avoid running into quota issues.
     def current_user_profile
       unless session[:current_user_profile]
-        plus = @client.discovered_api('plus')
-        response = @client.execute(plus.people.get, :userId => 'me')
+        plus = google_client.discovered_api('plus')
+        response = google_client.execute(plus.people.get, :userId => 'me')
         raise AuthorizationError if response.status == 401
         session[:current_user_profile] = JSON.parse(response.body)
       end
@@ -68,11 +74,11 @@ class ApplicationController < ActionController::Base
     #
     # Here's an example of using this method:
     #
-    #   response = @client.execute(plus.people.get, :userId => 'me')
+    #   response = google_client.execute(plus.people.get, :userId => 'me')
     #   raise AuthorizationError if response.status == 401
     #
     # You don't need to do this for
-    # @client.authorization.fetch_protected_resource since Signet will
+    # signet_client.fetch_protected_resource since Signet will
     # automatically raies a Signet::AuthorizationError.
     def handle_authorization_error
       session[:oauth2_token] = nil
@@ -90,6 +96,6 @@ class ApplicationController < ActionController::Base
     def fetch_youtube_resource(options = {})
       options[:headers] ||= {}
       options[:headers]['X-GData-Key'] ||= 'key=' + APP_CONFIG['youtube']['dev_key']
-      @client.authorization.fetch_protected_resource(options)
+      signet_client.fetch_protected_resource(options)
     end
 end

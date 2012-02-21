@@ -11,9 +11,9 @@
 # client can load via a discovery document.
 #
 # See also: https://developers.google.com/+/api/latest
-plus = @client.discovered_api("plus")
+plus = google_client.discovered_api("plus")
 plus.to_h.keys
-response = @client.execute(plus.people.get, :userId => 'me')
+response = google_client.execute(plus.people.get, :userId => 'me')
 response.status
 response.body
 profile = JSON.parse(response.body)
@@ -52,10 +52,10 @@ profile = JSON.parse(response.body)
 # Put binding.pry in a controller, load the page, and then run the following
 # in the shell.  Notice, this is an older Google API.  It's not supported by
 # google-api-ruby-client.  However, you can still use Signet (i.e.
-# @client.authorization) in order to make requests authenticated with OAuth2.
+# signet_client) in order to make requests authenticated with OAuth2.
 #
 # See also: http://code.google.com/apis/youtube/2.0/reference.html
-response = @client.authorization.fetch_protected_resource(
+response = signet_client.fetch_protected_resource(
   :uri => 'https://gdata.youtube.com/feeds/api/users/default/playlists?v=2&alt=jsonc')
 
 # {"apiVersion"=>"2.1",
