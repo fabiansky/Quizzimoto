@@ -49,7 +49,7 @@ describe "Quizzes" do
 
       # I should see a Name field but not a Video or Form field.
       find '#quiz_name'
-      lambda { find '#quiz_video_id' }.should raise_error(Capybara::ElementNotFound)
+      page.should_not have_content('Search for a video')
       lambda { find '#quiz_form_id'  }.should raise_error(Capybara::ElementNotFound)
 
       fill_in 'Name', :with => 'JJ'
@@ -58,8 +58,8 @@ describe "Quizzes" do
       
       page.should have_content('Quiz was successfully created.')
       page.should have_content('Editing quiz')
+      page.should have_content('Search for a video')
       find '#quiz_name'
-      find '#quiz_video_id'
       find '#quiz_form_id'
     end
   end
@@ -101,6 +101,14 @@ describe "Quizzes" do
            'X-Gdata-Key'   => 'key=AI39si7sYNfF3-xVbZUalnyU-0CjvnwucP0u4edZ_uCm02GaM8RajpeTBJ3LWprdw_THhdvDNwjy2UPO4dCH3a0LG8B25cQnkQ'}).
         to_return(:status => 200, :body => IO.read(filename))
 
+      filename = Rails.root.join(
+        'spec/support/documents/gdata.youtube.com/feeds/api/videos/0HYHG3fuzvk?alt=jsonc&v=2')
+      stub_request(:get, 'https://gdata.youtube.com/feeds/api/videos/0HYHG3fuzvk?alt=jsonc&v=2').
+        with(:headers =>
+          {'Authorization' => 'Bearer 12345',
+           'X-Gdata-Key'   => 'key=AI39si7sYNfF3-xVbZUalnyU-0CjvnwucP0u4edZ_uCm02GaM8RajpeTBJ3LWprdw_THhdvDNwjy2UPO4dCH3a0LG8B25cQnkQ'}).
+        to_return(:status => 200, :body => IO.read(filename))
+
       quiz = Factory :quiz, :video_id => nil
       login
       visit edit_quiz_url(quiz)
@@ -129,16 +137,16 @@ describe "Quizzes" do
     end
 
     it 'shows an embedded player' do
-      Factory :quiz
+      Factory :complete_quiz
       login
-      click_link 'Scrabble for Nihilists'
+      click_link 'Trigonometry'
       page.should have_css('iframe.player')
     end
 
     it 'shows an embedded form' do
-      Factory :quiz
+      Factory :complete_quiz
       login
-      click_link 'Scrabble for Nihilists'
+      click_link 'Trigonometry'
       page.should have_css('iframe.form')      
     end
 
