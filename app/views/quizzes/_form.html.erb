@@ -50,6 +50,14 @@
 
       <% if @quiz.video_id.blank? %>
         <p>This is no video associated with this quiz yet.</p>
+      <% elsif @video_entry.blank? %>
+        <p>Could not load video: <%= @quiz.video_id %></p>
+      <% else %>
+        <p>
+          <%= link_to @video_entry['data']['title'],
+                      @video_entry['data']['player']['default'],
+                      :target => '_top' %>
+        </p>
       <% end %>
 
       <p><%= link_to 'Search for a video', quiz_video_search_path(@quiz) %></p>
