@@ -1,13 +1,13 @@
 TODO
 ====
 
-The edit quiz page should have sections.
-The form_id section should have some instructions.
+Let the user search for videos.
+On the edit page, tell the user what video he has selected.
+Test for no search results.
+Handle paging?
 Use a YouTube dev key:
   Pass it through the Signet API calls.
-  Document it in README_FOR_APP.
 Give the user a link to upload or record videos.
-Let the user search for videos.
 Give the user a list of his own videos.
 Let the user select a video for the quiz.
 Let the user create keyframes that pause the video.
