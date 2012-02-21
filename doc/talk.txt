@@ -1,0 +1,151 @@
+Using YouTube APIs for Education
+================================
+ 
+Abstract
+--------
+
+Did you know that YouTube offers APIs? Did you know that video is one of the
+most powerful communication mechanisms for instilling knowledge?  Now you can
+combine the two!  Come watch as Shannon -jj Behrens shows that YouTube and
+Ruby on Rails are a great fit for building interesting educational apps.
+ 
+Bio
+---
+
+Shannon -jj Behrens is a developer advocate at Google. His goal is to foster a
+rich set of third-party applications built on YouTube APIs. He blogs at
+jjinux.blogspot.com on topics such as Python, Ruby, Linux, open source
+software, the Web, and lesser-known programming languages.
+
+Outline
+-------
+
+Introduction
+	Talk outline
+	Brand new talk showing a brand new application
+	Contact information:
+		youtube.com/dev
+		@YouTubeDev
+		jjinux.blogspot.com
+YouTube.com/EDU:
+	https://docs.google.com/a/google.com/presentation/d/1ea_qRw_w7OWRyFMmSqmh46S4ncj3rGbzEHRCcv5I6g4/edit#slide=id.g988df3_0_164
+Quizzimoto:
+	A sample application that uses the YouTube and Google+ APIs
+	I'm hoping to open source it as soon as possible
+An overview of YouTube's APIs:
+	http://code.google.com/apis/youtube/overview.html
+	GData APIs
+		Perform searches, upload videos, create playlists, and more
+	Player APIs
+		Control the player in AS3 or JavaScript
+General advice concerning client libraries:
+	Be skeptical of client libraries:
+		They're often poorly documented or out of date
+	Understand and embrace REST APIs:
+		They're often well documented:
+			Especially at Google
+	Understand what the client library does:
+		Read the documentation and the samples
+		Don't be afraid to skim the source, especially the tests!
+		Use client libraries when they make your life easier
+An overview of Google client libraries for Ruby
+	google-api-ruby-client:
+		It automatically creates bindings for newer Google APIs
+	Signet:
+		It's used by google-api-ruby-client
+		It handles OAuth2
+		It's also useful for working with older Google APIs
+	gdata-ruby-util:
+		This was a client library for older GData-based, Google APIs
+		It has a little bit of YouTube specific code
+		It doesn't include support for OAuth2
+		It's no longer necessary
+	What Quizzimoto needed from a client library:
+		OAuth2
+		Pass the developer key to YouTube
+		Support both older and newer Google APIs
+	What I used:
+		google-api-ruby-client for talking to newer APIs like Google+
+		Signet for doing OAuth2 and talking to YouTube's GData API
+OAuth2
+	What is it and why do you need it:
+		OAuth2 is an authorization scheme
+		Using OAuth2, you can use an API on the user's behalf
+		There are different flows for different types of apps:
+			Including non-web apps
+	The big picture:
+		The user uses your app
+		Your app redirects the user to Google
+		Google asks the user if your app can access certain services on his behalf
+		Google redirects to your app with some information
+		Your app talks to Google to verify the authenticity of that information
+		Your app can use that information to access certain services on the user's behalf
+		For instance, you can:
+			Load his Google+ profile
+			Add things to his calendar
+			Get his list of favorite videos
+	In my app, I didn't bother with my own login system:
+		I only use OAuth2
+		I ask the user for access to Google+ and YouTube
+	Learning more:
+		Authoritative demo written in Python:
+			Show it in action
+			http://oauthssodemo.appspot.com/
+		Well written, concise documentation:
+			http://code.google.com/apis/youtube/2.0/developers_guide_protocol_oauth2.html
+		A very short example of using google-api-ruby-client for OAuth2:
+			http://code.google.com/p/google-api-ruby-client/wiki/OAuth2
+		Sign up for an API key:
+			https://code.google.com/apis/console/
+	Show some code:
+		application_controller.rb
+		oauth2_controller.rb
+		routes.rb
+Doing TDD with web services
+	Why:
+		Code without tests tends to break
+		Robust, well-tested code is better than fragile, once-tested code
+		It's not reasonable to really use web services in your tests:
+			It'd be too slow
+			It's not easy to reset the state on the third-party server
+			There might be quota issues
+			I like to code on BART
+		I like integration tests:
+			That means I'm going to load pages in my tests that make use of web services
+	Common reaction:
+		But TDD with web services is hard!
+		How do you write a stub for something you barely understand?
+	My solution:
+		Disclaimer:
+			I'm not even a full-time Ruby developer
+			I'm sure there are other approaches, some of which may be better
+		Use pry:
+			pry is an irb replacement
+			I use it to start a shell from within the right application context:
+				Usually a controller after the user has already logged in
+			Add "binding.pry" somewhere in a controller action
+			Use pry to play around with the client library:
+				Make a request and get the response that you're looking for
+				Save the output for later
+		Start writing a functional or integration test:
+			Its goal is to exercise the web service call
+		Use webmock:
+			It'll prevent your test from actually calling the web service
+			It'll give you a snippet of code to stub out the request
+			Merge that snippet of code with the real response from earlier
+		Other tricks:
+			I tend to save the real response in a file with a realistic name:
+				spec/support/documents/gdata.youtube.com/feeds/api/videos?v=2&alt=jsonc&q=Pythagorean+Theorem+in+60+Seconds
+			Use the same techniques to handle all your error cases:
+				Such as when your OAuth2 access token expires
+				Or when you don't get any search results
+			Wrap your stubs in functions
+				That way you can reuse them for multiple functional and integration tests
+			Read the source code for Signet in order to simulate an OAuth2 login
+Live demo:
+ 	See api_samples.rb
+ 	Show webmock
+Conclusion:
+	youtube.com/dev
+	@YouTubeDev
+	jjinux.blogspot.com
