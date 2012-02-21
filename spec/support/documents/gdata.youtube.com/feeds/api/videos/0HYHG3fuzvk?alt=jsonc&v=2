@@ -1,0 +1,57 @@
+{
+ "apiVersion": "2.1",
+ "data": {
+  "id": "0HYHG3fuzvk",
+  "uploaded": "2007-02-19T00:49:07.000Z",
+  "updated": "2012-02-19T21:54:02.000Z",
+  "uploader": "mathcrazytutoring",
+  "category": "Entertainment",
+  "title": "Pythagorean Theorem in 60 Seconds",
+  "description": "A quick overview of how the pythagorean theorem can be used",
+  "tags": [
+   "math",
+   "crazy",
+   "mathcrazy",
+   "mathcrazymadera",
+   "madera",
+   "tutor",
+   "tutoring",
+   "algebra",
+   "geometry",
+   "pythagorean",
+   "theorem"
+  ],
+  "thumbnail": {
+   "sqDefault": "http://i.ytimg.com/vi/0HYHG3fuzvk/default.jpg",
+   "hqDefault": "http://i.ytimg.com/vi/0HYHG3fuzvk/hqdefault.jpg"
+  },
+  "player": {
+   "default": "https://www.youtube.com/watch?v=0HYHG3fuzvk&feature=youtube_gdata_player",
+   "mobile": "https://m.youtube.com/details?v=0HYHG3fuzvk"
+  },
+  "content": {
+   "5": "https://www.youtube.com/v/0HYHG3fuzvk?version=3&f=videos&app=youtube_gdata",
+   "1": "rtsp://v4.cache7.c.youtube.com/CiILENy73wIaGQn5zu53Gwd20BMYDSANFEgGUgZ2aWRlb3MM/0/0/0/video.3gp",
+   "6": "rtsp://v5.cache3.c.youtube.com/CiILENy73wIaGQn5zu53Gwd20BMYESARFEgGUgZ2aWRlb3MM/0/0/0/video.3gp"
+  },
+  "duration": 95,
+  "recorded": "2007-02-12",
+  "location": "Math Crazy Madera",
+  "rating": 4.71831,
+  "likeCount": "396",
+  "ratingCount": 426,
+  "viewCount": 201888,
+  "favoriteCount": 296,
+  "commentCount": 497,
+  "accessControl": {
+   "comment": "allowed",
+   "commentVote": "allowed",
+   "videoRespond": "moderated",
+   "rate": "allowed",
+   "embed": "allowed",
+   "list": "allowed",
+   "autoPlay": "allowed",
+   "syndicate": "allowed"
+  }
+ }
+}
