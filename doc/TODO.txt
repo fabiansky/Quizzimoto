@@ -1,15 +1,12 @@
 TODO
 ====
 
-Let the user search for videos.
-On the edit page, tell the user what video he has selected.
+It always searches for the same thing.
 Test for no search results.
+Test for failure to load video metadata.
 Handle paging?
-Use a YouTube dev key:
-  Pass it through the Signet API calls.
 Give the user a link to upload or record videos.
 Give the user a list of his own videos.
-Let the user select a video for the quiz.
 Let the user create keyframes that pause the video.
 Don't let the user edit someone else's video:
   Don't even show them the edit link.
