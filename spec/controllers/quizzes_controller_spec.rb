@@ -39,7 +39,7 @@ describe QuizzesController do
       assigns(:quizzes).should eq([quiz])
     end
 
-    it "handles expired access tokens" do
+    it "handles when google-api-ruby-client encounters an expired access token" do
       stub_request(:get, 'https://www.googleapis.com/plus/v1/people/me').
         with(:headers => {'Authorization' => 'Bearer 12345'}).
         to_return(:status => 401, :body => JSON.dump(
@@ -189,4 +189,33 @@ describe QuizzesController do
     end
   end
 
+  describe "GET video_search" do
+    it "handles when Signet encounters an expired access token" do
+      quiz = Factory :quiz
+
+      stub_request(:get,
+        'https://gdata.youtube.com/feeds/api/videos?v=2&alt=jsonc&q=Pythagorean+Theorem+in+60+Seconds').
+        with(:headers =>
+          {'Authorization' => 'Bearer 12345',
+           'X-Gdata-Key'   => 'key=AI39si7sYNfF3-xVbZUalnyU-0CjvnwucP0u4edZ_uCm02GaM8RajpeTBJ3LWprdw_THhdvDNwjy2UPO4dCH3a0LG8B25cQnkQ'}).
+        to_return(:status => 401, :body => <<-END)
+<HTML>
+<HEAD>
+<TITLE>Token invalid - Stateless token expired</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1>Token invalid - Stateless token expired</H1>
+<H2>Error 401</H2>
+</BODY>
+</HTML>
+END
+
+      get(:video_search,
+          {:quiz_id => quiz.to_param, :q => 'Pythagorean Theorem in 60 Seconds'},
+          valid_session)
+      session[:token].should be_nil
+      session[:flash][:notice].should =~ /Your session has expired/
+      response.should redirect_to(oauth2_authorize_url)
+    end
+  end
 end
