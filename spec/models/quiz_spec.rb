@@ -34,14 +34,14 @@ describe Quiz do
     quiz.owner_id.should_not be_nil
   end
 
-  it 'has a video_id' do
+  it 'has a video_id attribute' do
     quiz = Factory :quiz
-    quiz.video_id.should_not be_nil
+    quiz.video_id.should be_nil
   end
 
-  it 'has a form_id' do
+  it 'has a form_id attribute' do
     quiz = Factory :quiz
-    quiz.form_id.should_not be_nil
+    quiz.form_id.should be_nil
   end
 
   it 'should not allow mass assignment to owner_id' do
