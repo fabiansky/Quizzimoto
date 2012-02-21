@@ -1,8 +1,7 @@
 TODO
 ====
 
-It always searches for the same thing.
-Test for no search results.
+Handle no search results.
 Test for failure to load video metadata.
 Handle paging?
 Give the user a link to upload or record videos.
