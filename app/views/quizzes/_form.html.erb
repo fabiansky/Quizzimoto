@@ -48,10 +48,11 @@
     <fieldset>
       <legend>Video</legend>
 
-      <div class=field>
-        <%= f.label :video_id %>
-        <%= f.text_field :video_id %>
-      </div>
+      <% if @quiz.video_id.blank? %>
+        <p>This is no video associated with this quiz yet.</p>
+      <% end %>
+
+      <p><%= link_to 'Search for a video', quiz_video_search_path(@quiz) %></p>
     </fieldset>
 
     <fieldset>
