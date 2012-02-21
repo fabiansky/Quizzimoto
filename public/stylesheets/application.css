@@ -20,6 +20,18 @@ p.flash_notice {
   padding-right: 4px;
 }
 
+div.quiz_cell {
+  display: inline-table;
+  border: 1px solid black;
+  width: 200px;
+  margin: 0 4px 4px 0;
+  padding: 4px;
+}
+
+div.quiz_cell img {
+  margin-top: 4px;
+}
+
 iframe.form {
   float: left;
 }
