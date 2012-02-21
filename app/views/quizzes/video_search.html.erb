@@ -1,0 +1,28 @@
+<h3>Video search</h3>
+
+<%= form_tag({}, {:method => 'GET'}) do %>
+  <%= text_field_tag :q, params[:q],
+                     {:size              => 40,
+                      'x-webkit-speech'  => '', 
+                      'x-webkit-grammar' => 'builtin:search'} %>
+  <%= submit_tag 'Search' %>
+<% end %>
+
+<% unless params[:q].blank? %>
+  <% if @search_results['data']['items'].length == 0 %>
+    <p>Your search did not match any videos.</p>
+  <% else %>
+    <ul>
+      <% @search_results['data']['items'].each do |item| %>
+        <li>
+          <%= form_for(@quiz) do |f| %>
+            <%= f.hidden_field :video_id, :value => item['id'] %>
+            <%= hidden_field_tag :keep_editing, 'true' %>
+            <%= submit_tag 'Use This Video' %>
+            <%= item['title'] %>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+<% end %>
