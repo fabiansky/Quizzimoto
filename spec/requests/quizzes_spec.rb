@@ -119,7 +119,32 @@ describe "Quizzes" do
       page.should have_content('Pythagorean Theorem in 60 Seconds')
       page.should_not have_content('This is no video associated with this quiz yet.')
     end
-  end
+
+#     Demo doing TDD with web services.
+#
+#     it 'gracefully handles no search results' do
+#       stub_request(:get, "https://gdata.youtube.com/feeds/api/videos?alt=jsonc&q=28372348623032&v=2").
+#        with(:headers => {'Accept'=>'*/*', 'Authorization'=>'Bearer 12345', 'Cache-Control'=>'no-store', 'Content-Type'=>'application/x-www-form-urlencoded', 'User-Agent'=>'Ruby', 'X-Gdata-Key'=>'key=AI39si7sYNfF3-xVbZUalnyU-0CjvnwucP0u4edZ_uCm02GaM8RajpeTBJ3LWprdw_THhdvDNwjy2UPO4dCH3a0LG8B25cQnkQ'}).
+#        to_return(:status => 200, :body => <<-JSON, :headers => {})
+# {
+#     "apiVersion": "2.1",
+#     "data": {
+#         "updated": "2012-02-22T02:19:27.700Z",
+#         "totalItems": 0,
+#         "startIndex": 1,
+#         "itemsPerPage": 25
+#     }
+# }
+# JSON
+# 
+#       quiz = Factory :quiz
+#       login
+#       visit quiz_video_search_url(quiz)
+#       fill_in 'q', :with => '28372348623032'
+#       click_button 'Search'
+#       page.should have_content('Your search did not match any videos.')
+#     end
+#   end
 
   describe 'show' do
     it 'has an edit link' do

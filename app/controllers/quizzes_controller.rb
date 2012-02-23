@@ -65,6 +65,10 @@ class QuizzesController < ApplicationController
   def video_search
     @quiz = Quiz.find(params[:quiz_id])
     unless params[:q].blank?
+
+      # Demo doing TDD with web services.
+      # binding.pry
+
       response = fetch_youtube_resource(
         :uri => 'https://gdata.youtube.com/feeds/api/videos?v=2&alt=jsonc&q=' +
                 CGI::escape(params[:q]))
