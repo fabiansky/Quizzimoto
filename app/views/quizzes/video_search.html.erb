@@ -15,7 +15,7 @@
     
     if @search_results['data']['totalItems'].to_i == 0
   -->
-  <% % if @search_results['data']['items'].length == 0 % %>
+  <% if @search_results['data']['items'].length == 0 %>
   
     <p>Your search did not match any videos.</p>
   <% else %>
