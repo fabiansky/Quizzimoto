@@ -144,7 +144,7 @@ describe "Quizzes" do
 #       click_button 'Search'
 #       page.should have_content('Your search did not match any videos.')
 #     end
-#   end
+  end
 
   describe 'show' do
     it 'has an edit link' do
