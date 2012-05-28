@@ -34,11 +34,12 @@ group :test, :development do
   gem 'rspec-rails', '~> 2.6'
   gem 'capybara'
 
-  # I find these two to be helpful during development.  However, I had a hard
-  # time getting ruby-debug19 running under MacPorts.  Feel free to comment out
-  # these two lines.
-  gem 'ruby-debug19', :require => 'ruby-debug'
+  # I find these two to be helpful during development.  However, ruby-debug19
+  # always gives me a hard time.  Feel free to comment out either or both of
+  # these.
+  # gem 'ruby-debug19', :require => 'ruby-debug'
   gem 'pry'
+
   gem 'factory_girl_rails', '~> 1.2'
 end
 
