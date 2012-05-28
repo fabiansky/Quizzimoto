@@ -6,18 +6,19 @@ APIs.
 
 == Setup
 
-This application uses Ruby version 1.9.2 and Rails version 3.0.5.  If you
+This application uses Ruby version 1.9.3 and Rails version 3.0.5.  If you
 already have those things installed, you can skip the next section.
 
 === Setting up Ruby with rvm
 
-These instructions show how to setup Ruby 1.9.2 under rvm on OS X.  It
-shouldn't require that much tweaking to get them to run on other operating
-systems.  Note that I had a lot of issues getting ruby-debug19 to work under
-MacPorts which is why I switched to rvm.  It also turns out that some HTTPS
-client (i.e. SSL) issues I had went away as soon as I switched to rvm.
+These instructions show how to setup Ruby 1.9.3 on OS X 10.7 (Lion) using
+Homebrew and rvm.  It shouldn't require that much tweaking to get them to run
+on other operating systems.  Note that I had a lot of issues getting ruby-
+debug19 to work under MacPorts which is why I switched to rvm.  It also turns
+out that some HTTPS client (i.e. SSL) issues I had went away as soon as I
+switched to rvm.
 
-  sudo port install sqlite3
+  brew install sqlite3
  
 Setup rvm:
 
@@ -36,14 +37,11 @@ Run the following in all your open terminals:
 
 Do *not* use sudo when using "gem install" or "bundle install" under rvm.
   
-  rvm install 1.9.2
-  rvm use 1.9.2            # To switch Ruby versions temporarily
-  which ruby irb gem rake  # Should all be in ~/.rvm
-  ruby -v                  # Should be 1.9.2
-  rvm --default 1.9.2      # To set your default version of Ruby
-
-Gems will be located in ~/.rvm/gems/ruby-1.9.2-p290/gems.
-    
+  rvm install 1.9.3 --with-gcc=clang  # --with-gcc only on Lion and later
+  rvm use 1.9.3                       # To switch Ruby versions temporarily
+  which ruby irb gem rake             # Should all be in ~/.rvm
+  ruby -v                             # Should be 1.9.3
+  rvm --default 1.9.3                 # To set your default version of Ruby    
   gem install bundler
 
 === Setting Up the Application
