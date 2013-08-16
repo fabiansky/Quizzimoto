@@ -1,6 +1,10 @@
 .bundle
 db/*.sqlite3
 log/*.log
+log/*.log*
 tmp/
 /.idea
 config/app_config.yml
+.sass-cache
+.swp
+.swo
