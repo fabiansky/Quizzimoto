@@ -24,7 +24,7 @@ describe Oauth2Controller do
       params['approval_prompt'].first.should == 'auto'
       params['scope'].first.split.should == %w(
         https://www.googleapis.com/auth/plus.me
-        http://gdata.youtube.com  
+        https://gdata.youtube.com
       )
     end
   end

@@ -19,17 +19,17 @@ describe Quiz do
 
   [['a', false],
    [-1, false],
-   [0, true],
+   [0, false],
    [1, true]].each do |test|
     input, expected = test
 
-    it "requires min_age_years to be a number >= 0 (#{input}, #{expected})" do
+    it "requires min_age_years to be a number >= 1 (#{input}, #{expected})" do
       quiz = Factory :quiz
       quiz.min_age_years = input
       quiz.valid?.should == expected
     end
   end
-  
+
   [['United States', false],
    ['USA', false],
    ['__', false],

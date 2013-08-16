@@ -6,7 +6,7 @@ def login
     'refresh_token' => '54321',
     'expires_in'    => '3600'
   })
-  
+
   stub_request(:post, 'https://accounts.google.com/o/oauth2/token').with(
     :body => {
       'grant_type'    => 'authorization_code',

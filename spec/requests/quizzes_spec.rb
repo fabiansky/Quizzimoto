@@ -69,7 +69,7 @@ describe "Quizzes" do
       fill_in 'Name', :with => 'JJ'
       fill_in 'Minimum age', :with => 36
       click_button 'Create Quiz'
-      
+
       page.should have_content('Quiz was successfully created.')
       page.should have_content('Editing quiz')
       page.should have_content('Search for a video')
@@ -110,10 +110,11 @@ describe "Quizzes" do
       filename = Rails.root.join(
         'spec/support/documents/gdata.youtube.com/feeds/api/videos?v=2&alt=jsonc&q=Pythagorean+Theorem+in+60+Seconds')
       stub_request(:get, 'https://gdata.youtube.com/feeds/api/videos?alt=jsonc&q=Pythagorean%20Theorem%20in%2060%20Seconds&v=2').
-        with(:headers => 
-          {'Authorization' => 'Bearer 12345', 
-           'X-Gdata-Key'   => 'key=AI39si7sYNfF3-xVbZUalnyU-0CjvnwucP0u4edZ_uCm02GaM8RajpeTBJ3LWprdw_THhdvDNwjy2UPO4dCH3a0LG8B25cQnkQ'}).
+        with(:headers =>
+          {'Authorization' => 'Bearer 12345',
+           'X-Gdata-Key'   => 'key=AI39si6Vq4EFTnQt7cL51Mn_eOWS_qHvOtMbrUuGMYDxyKwexi9Sq0wraBz0lh8n5h_oVOF65TJsbCElVn5zlfRyMW0M0tnNvg'}).
         to_return(:status => 200, :body => IO.read(filename))
+
       stub_video_entry
 
       quiz = Factory :quiz, :video_id => nil
@@ -126,7 +127,7 @@ describe "Quizzes" do
       click_button 'Search'
       page.should have_content('Pythagorean Theorem in 60 Seconds')
 
-      click_button 'Use This Video'
+      first('.submit.btn').click
       quiz.reload
       quiz.video_id.should == '0HYHG3fuzvk'
       page.should have_content('Editing quiz')
@@ -136,28 +137,25 @@ describe "Quizzes" do
 
 #     Demo doing TDD with web services.
 #
-#     it 'gracefully handles no search results' do
-#       stub_request(:get, "https://gdata.youtube.com/feeds/api/videos?alt=jsonc&q=28372348623032&v=2").
-#        with(:headers => {'Accept'=>'*/*', 'Authorization'=>'Bearer 12345', 'Cache-Control'=>'no-store', 'Content-Type'=>'application/x-www-form-urlencoded', 'User-Agent'=>'Ruby', 'X-Gdata-Key'=>'key=AI39si7sYNfF3-xVbZUalnyU-0CjvnwucP0u4edZ_uCm02GaM8RajpeTBJ3LWprdw_THhdvDNwjy2UPO4dCH3a0LG8B25cQnkQ'}).
-#        to_return(:status => 200, :body => <<-JSON, :headers => {})
-# {
-#     "apiVersion": "2.1",
-#     "data": {
-#         "updated": "2012-02-22T02:19:27.700Z",
-#         "totalItems": 0,
-#         "startIndex": 1,
-#         "itemsPerPage": 25
-#     }
-# }
-# JSON
-# 
-#       quiz = Factory :quiz
-#       login
-#       visit quiz_video_search_url(quiz)
-#       fill_in 'q', :with => '28372348623032'
-#       click_button 'Search'
-#       page.should have_content('Your search did not match any videos.')
-#     end
+    it 'gracefully handles no search results' do
+      stub_request(:get, "https://gdata.youtube.com/feeds/api/videos?alt=jsonc&q=28372348623032&v=2"). with(:headers => {'Accept'=>'*/*', 'Authorization'=>'Bearer 12345', 'Cache-Control'=>'no-store', 'Content-Type'=>'application/x-www-form-urlencoded', 'User-Agent'=>'Ruby', 'X-Gdata-Key'=>'key=AI39si6Vq4EFTnQt7cL51Mn_eOWS_qHvOtMbrUuGMYDxyKwexi9Sq0wraBz0lh8n5h_oVOF65TJsbCElVn5zlfRyMW0M0tnNvg'}). to_return(:status => 200, :body => <<-JSON, :headers => {})
+{
+    "apiVersion": "2.1",
+    "data": {
+       "updated": "2013-08-15T19:49:34.850Z",
+       "totalItems": 0,
+       "startIndex": 1,
+       "itemsPerPage": 25
+    }
+}
+JSON
+      quiz = Factory :quiz
+      login
+      visit quiz_video_search_url(quiz)
+      fill_in 'q', :with => '28372348623032'
+      click_button 'Search'
+      page.should have_content('Your search did not match any videos.')
+    end
   end
 
   describe 'show' do
@@ -179,7 +177,7 @@ describe "Quizzes" do
       Factory :complete_quiz
       login
       click_link 'Trigonometry'
-      page.should have_css('iframe.form')      
+      page.should have_css('iframe.form')
     end
 
     it 'tells you if there is no video' do

@@ -207,21 +207,22 @@ describe QuizzesController do
     it "handles when Signet encounters an expired access token" do
       quiz = Factory :quiz
 
-      stub_request(:get,
-        'https://gdata.youtube.com/feeds/api/videos?v=2&alt=jsonc&q=Pythagorean+Theorem+in+60+Seconds').
-        with(:headers =>
-          {'Authorization' => 'Bearer 12345',
-           'X-Gdata-Key'   => 'key=AI39si7sYNfF3-xVbZUalnyU-0CjvnwucP0u4edZ_uCm02GaM8RajpeTBJ3LWprdw_THhdvDNwjy2UPO4dCH3a0LG8B25cQnkQ'}).
-        to_return(:status => 401, :body => <<-END)
-<HTML>
-<HEAD>
-<TITLE>Token invalid - Stateless token expired</TITLE>
-</HEAD>
-<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
-<H1>Token invalid - Stateless token expired</H1>
-<H2>Error 401</H2>
-</BODY>
-</HTML>
+stub_request(:get, "https://gdata.youtube.com/feeds/api/videos?alt=jsonc&q=Pythagorean%20Theorem%20in%2060%20Seconds&v=2").
+         with(:headers =>
+          {'Authorization'=>'Bearer 12345',
+            'X-Gdata-Key'=>'key=AI39si6Vq4EFTnQt7cL51Mn_eOWS_qHvOtMbrUuGMYDxyKwexi9Sq0wraBz0lh8n5h_oVOF65TJsbCElVn5zlfRyMW0M0tnNvg'}).
+         to_return(:status => 200, :body => <<-END, :headers => {})
+<!DOCTYPE html>
+<html lang=en>
+  <meta charset=utf-8>
+  <meta name=viewport content="initial-scale=1, minimum-scale=1, width=device-width">
+  <title>Error 404 (Not Found)!!1</title>
+  <style>
+    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:15px}body{margin:7% auto 0;max-width:390px;min-height:180px;padding:30px 0 15px}* > body{background:url(//www.google.com/images/errors/robot.png) 100% 5px no-repeat;padding-right:205px}p{margin:11px 0 22px;overflow:hidden}ins{color:#777;text-decoration:none}a img{border:0}@media screen and (max-width:772px){body{background:none;margin-top:0;max-width:none;padding-right:0}}
+  </style>
+  <a href=//www.google.com/><img src=//www.google.com/images/errors/logo_sm.gif alt=Google></a>
+  <p><b>404.</b> <ins>That’s an error.</ins>
+  <p>The requested URL <code>/feed/api/videos</code> was not found on this server.  <ins>That’s all we know.</ins>
 END
 
       get(:video_search,
