@@ -19,7 +19,7 @@ out that some HTTPS client (i.e. SSL) issues I had went away as soon as I
 switched to rvm.
 
   brew install sqlite3
- 
+
 Setup rvm:
 
   # On Ubuntu, you'll need a couple dependencies:
@@ -36,12 +36,12 @@ Run the following in all your open terminals:
   source ~/.bash_profile
 
 Do *not* use sudo when using "gem install" or "bundle install" under rvm.
-  
+
   rvm install 1.9.3 --with-gcc=clang  # --with-gcc only on Lion and later
   rvm use 1.9.3                       # To switch Ruby versions temporarily
   which ruby irb gem rake             # Should all be in ~/.rvm
   ruby -v                             # Should be 1.9.3
-  rvm --default 1.9.3                 # To set your default version of Ruby    
+  rvm --default 1.9.3                 # To set your default version of Ruby
   gem install bundler
 
 === Setting Up the Application

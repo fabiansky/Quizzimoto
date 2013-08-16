@@ -19,7 +19,7 @@
 
 ###############################################################################
 # Loading a Google+ profile
-# 
+#
 # Put binding.pry in a controller, load the page, and then run the following
 # in the shell.  Notice, this is a newer Google API which google-api-ruby-
 # client can load via a discovery document.
@@ -62,7 +62,7 @@ profile = JSON.parse(response.body)
 
 ###############################################################################
 # Fetching the user's playlists
-# 
+#
 # Put binding.pry in a controller, load the page, and then run the following
 # in the shell.  Notice, this is an older Google API.  It's not supported by
 # google-api-ruby-client.  However, you can still use Signet (i.e.

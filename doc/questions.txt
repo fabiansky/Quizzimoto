@@ -13,7 +13,7 @@ Should I use Cucumber?
 What should I do about auth?  Should I use Identity Toolkit?
 
   Ryan Boyd said that I don't need Identity Toolkit.  He said I can just stick with OAuth2.  See:
-  
+
     http://oauthssodemo.appspot.com/
     http://code.google.com/apis/youtube/2.0/developers_guide_protocol_oauth2.html
 
@@ -105,7 +105,7 @@ Can I do the same thing for a form?
   the URL for the form.  Transform the URL from:
 
     https://docs.google.com/spreadsheet/ccc?key=0AvZ56A18VRlxdExqSW96eWZSMC1DZ3hqelZTWEEyOHc#gid=0
-    
+
   To:
 
     https://docs.google.com/spreadsheet/gform?key=0AvZ56A18VRlxdExqSW96eWZSMC1DZ3hqelZTWEEyOHc&hl=en_US#edit

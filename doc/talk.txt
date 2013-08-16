@@ -1,6 +1,6 @@
 Using YouTube APIs for Education
 ================================
- 
+
 Abstract
 --------
 
@@ -8,7 +8,7 @@ Did you know that YouTube offers APIs? Did you know that video is one of the
 most powerful communication mechanisms for instilling knowledge?  Now you can
 combine the two!  Come watch as Shannon -jj Behrens shows that YouTube and
 Ruby on Rails are a great fit for building interesting educational apps.
- 
+
 Bio
 ---
 
