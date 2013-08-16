@@ -15,7 +15,10 @@
 Quizzimoto::Application.routes.draw do
   resources :quizzes do
     get 'video_search'
+    post 'video_search'
   end
+
+  # match 'quizzes/:id/video_search', :to => 'quizzes#video_search', via: :post, as: :quiz_video_search
 
   match "oauth2authorize" => "oauth2#authorize", :as => :oauth2_authorize
   match "oauth2callback"  => "oauth2#callback",  :as => :oauth2_callback
