@@ -24,7 +24,7 @@ if Rack.release.to_f <= 1.2
       def escape(s)
         CGI.escape(s.to_s)
       end
-      
+
       def unescape(s)
         CGI.unescape(s)
       end
