@@ -14,7 +14,7 @@
 
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.5'
+gem 'rails', '3.2.14'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -41,6 +41,7 @@ gem 'signet', '~> 0.3.0', :require => 'signet/oauth_2/client'
 gem 'httpadapter', :require => 'httpadapter/adapters/net_http'
 gem 'countries'
 
+
 # Bundle gems for the local environment. Make sure to
 # put test-only gems in this group so their generators
 # and rake tasks are available in development mode:
@@ -53,8 +54,12 @@ group :test, :development do
   # these.
   # gem 'ruby-debug19', :require => 'ruby-debug'
   gem 'pry'
+  gem 'pry-debugger'
 
   gem 'factory_girl_rails', '~> 1.2'
+
+  gem 'better_errors'
+  gem "binding_of_caller"
 end
 
 # webmock gets in the way of normal development.
