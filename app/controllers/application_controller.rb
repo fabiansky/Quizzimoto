@@ -68,7 +68,11 @@ class ApplicationController < ActionController::Base
         raise AuthorizationError if response.status == 401
         session[:current_user_profile] = JSON.parse(response.body)
       end
-      session[:current_user_profile]
+      if session[:current_user_profile] == nil
+        'http://gravatar.com/avatar/771951f55ed37335f238e1a80dfda9cd?s=420'
+      else
+        session[:current_user_profile]
+      end
     end
 
     # Return the current user's Google+ ID.

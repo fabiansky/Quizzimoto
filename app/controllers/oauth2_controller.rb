@@ -15,7 +15,8 @@
 class Oauth2Controller < ApplicationController
   def authorize
     @authorization_uri = signet_client.authorization_uri(
-      :approval_prompt => 'auto')
+      :approval_prompt => 'auto'
+      )
   end
 
   def callback
