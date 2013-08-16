@@ -1,12 +1,12 @@
 <!--
   Copyright 2012 Google Inc.
- 
+
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
   You may obtain a copy of the License at
- 
+
     http://www.apache.org/licenses/LICENSE-2.0
- 
+
   Unless required by applicable law or agreed to in writing, software
   distributed under the License is distributed on an "AS IS" BASIS,
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -16,23 +16,18 @@
 
 <h3>Video search</h3>
 
-<%= form_tag({}, {:method => 'GET'}) do %>
+<%= form_tag({}, {:method => 'GET '}) do %>
   <%= text_field_tag :q, params[:q],
                      {:size              => 40,
-                      'x-webkit-speech'  => '', 
+                      'x-webkit-speech'  => '',
                       'x-webkit-grammar' => 'builtin:search'} %>
   <%= submit_tag 'Search' %>
 <% end %>
 
 <% unless params[:q].blank? %>
 
-  <!-- 
-    Demo doing TDD with web services.
-    
-    if @search_results['data']['totalItems'].to_i == 0
-  -->
-  <% if @search_results['data']['items'].length == 0 %>
-  
+  <% if @search_results['data']['totalItems'].to_i.zero? %>
+
     <p>Your search did not match any videos.</p>
   <% else %>
     <ul>
@@ -41,7 +36,7 @@
           <%= form_for(@quiz) do |f| %>
             <%= f.hidden_field :video_id, :value => item['id'] %>
             <%= hidden_field_tag :keep_editing, 'true' %>
-            <%= submit_tag 'Use This Video' %>
+            <%= submit_tag 'Use This Video', class: 'submit btn' %>
             <%= item['title'] %>
           <% end %>
         </li>
